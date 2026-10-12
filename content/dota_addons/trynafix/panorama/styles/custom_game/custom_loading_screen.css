@@ -1,0 +1,145 @@
+.BedWarsLoadingRoot {
+    width: 100%;
+    height: 100%;
+    overflow: clip;
+    background-color: #07111b;
+    font-family: Reaver;
+}
+
+#BedWarsLoadingBackground { width: 100%; height: 100%; }
+
+.BedWarsLoadingVignette {
+    width: 100%;
+    height: 100%;
+    background-color: gradient(radial, 50% 43%, 0% 0%, 73% 73%, from(#00000000), color-stop(0.68, #07111b10), to(#02070de8));
+}
+
+.BedWarsLoadingTopShade {
+    width: 100%;
+    height: 230px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#02070d80), to(#02070d00));
+}
+
+.BedWarsDashboardControl { width: 205px; height: 48px; margin: 16px 0px 0px 16px; }
+.BedWarsDashboardButton {
+    width: 205px;
+    height: 42px;
+    flow-children: right;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#1d2a35dd), to(#090f15e8));
+    border: 1px solid #899aa677;
+    border-radius: 3px;
+}
+.BedWarsDashboardButton:hover { brightness: 1.5; }
+.BedWarsDashboardArrow { width: 34px; vertical-align: center; color: #e7bd65; font-size: 31px; text-align: center; }
+.BedWarsDashboardLabel { width: fill-parent-flow(1); vertical-align: center; color: #d7e0e5; font-size: 13px; text-align: center; text-transform: uppercase; }
+
+/* Panorama layout belongs in CSS. XML flow-children attributes do not lay out
+   these containers; without these rules the icon and every label overlap. */
+.LoadingLowerSafeArea {
+    width: 760px;
+    max-width: 90%;
+    height: fit-children;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 48px;
+    flow-children: down;
+}
+
+.LoadingTipCard {
+    width: 100%;
+    height: fit-children;
+    flow-children: down;
+    opacity: 0;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#18232ff2), to(#080d13f7));
+    border: 1px solid #91a5b466;
+    border-radius: 5px;
+    box-shadow: fill #000000c0 0px 10px 30px 0px;
+    transition-property: opacity;
+    transition-duration: 0.15s;
+}
+.LoadingTipCard.TipVisible { opacity: 1; }
+.LoadingTipAccent { width: 100%; height: 4px; background-color: gradient(linear, 0% 0%, 100% 0%, from(#46bdf2), color-stop(0.48, #f0bd58), to(#e65145)); }
+.LoadingTipContent { width: 100%; height: fit-children; padding: 20px; flow-children: right; }
+.LoadingTipIconFrame {
+    width: 132px;
+    min-width: 132px;
+    height: 132px;
+    margin-right: 22px;
+    vertical-align: center;
+    overflow: clip;
+    background-color: gradient(radial, 50% 48%, 0% 0%, 75% 75%, from(#344858), to(#0a1118));
+    border: 1px solid #8fa7b266;
+    border-radius: 4px;
+}
+.LoadingTipIcon { width: 108px; height: 108px; horizontal-align: center; vertical-align: center; z-index: 2; }
+.LoadingTipIconGlow { width: 124px; height: 124px; horizontal-align: center; vertical-align: center; background-color: gradient(radial, 50% 50%, 0% 0%, 55% 55%, from(#8bdcff44), to(#00000000)); }
+.LoadingTipCopy { width: fill-parent-flow(1); height: fit-children; vertical-align: center; flow-children: down; }
+.LoadingTipEyebrow { width: 100%; height: fit-children; color: #d2aa58; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; }
+.LoadingTipTitle { width: 100%; height: fit-children; margin-top: 5px; color: #f2f5f7; font-size: 25px; font-weight: bold; white-space: normal; }
+.LoadingTipBody { width: 100%; height: fit-children; margin-top: 8px; color: #bdc9d2; font-family: Radiance; font-size: 18px; white-space: normal; }
+.LoadingTipControls { width: 100%; height: 52px; padding: 8px 16px; flow-children: right; border-top: 1px solid #71818d33; background-color: #060b10a8; }
+.LoadingTipButton { width: 112px; height: 34px; background-color: #22313d; border: 1px solid #71849277; border-radius: 3px; }
+.LoadingTipButton:hover { brightness: 1.6; }
+.LoadingTipButton Label { width: 100%; vertical-align: center; color: #cbd5dc; font-size: 12px; text-align: center; text-transform: uppercase; }
+.LoadingTipDotsFrame { width: fill-parent-flow(1); height: 34px; }
+.LoadingTipDots { width: fit-children; height: 34px; horizontal-align: center; flow-children: right; }
+.LoadingTipDot { width: 10px; height: 10px; margin: 12px 5px 0px 5px; background-color: #53626d; border: 1px solid #8495a166; border-radius: 50%; }
+.LoadingTipDot.Active { background-color: #64c7ef; border-color: #bceaff; box-shadow: #49b9eb88 0px 0px 7px 1px; }
+.BedWarsLoadingStatus { height: 30px; margin-top: 12px; horizontal-align: center; flow-children: right; }
+.BedWarsLoadingStatus Label { vertical-align: center; color: #d7e1e8aa; font-family: Radiance; font-size: 14px; }
+.BedWarsLoadingSpinner { width: 20px; height: 20px; margin-right: 9px; vertical-align: center; border: 2px solid #6e879977; border-radius: 50%; animation-name: BedWarsSpinnerPulse; animation-duration: 1.2s; animation-timing-function: ease-in-out; animation-iteration-count: infinite; }
+.BedWarsLoadingSpinnerInner { width: 6px; height: 6px; horizontal-align: center; vertical-align: center; background-color: #e4b858; border-radius: 50%; }
+@keyframes 'BedWarsSpinnerPulse' { 0% { opacity: 0.4; } 50% { opacity: 1; } 100% { opacity: 0.4; } }
+
+.LoadingPlayersPanel {
+    width: 1040px;
+    max-width: 90%;
+    height: fit-children;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 230px;
+    padding: 14px;
+    flow-children: down;
+    visibility: collapse;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#1b2426f5), to(#101819f5));
+    border: 1px solid #899a8866;
+    border-top: 3px solid #99b983;
+    box-shadow: fill #000000aa 0px 6px 24px 0px;
+}
+
+.LoadingPlayersHeading { width: 100%; margin-bottom: 4px; color: #b5e695; font-size: 24px; font-weight: bold; text-align: center; }
+.LoadingPlayersHint { width: 100%; margin-bottom: 10px; color: #a7b4b8; font-family: Radiance; font-size: 16px; text-align: center; }
+
+/* Use the engine's lobby roster and connection classes. This is populated
+   before PlayerResource/Game player data is available to custom scripts. */
+#LoadingPlayersList {
+    width: 100%;
+    height: fit-children;
+    min-height: 82px;
+    flow-children: right-wrap;
+    overflow: squish scroll;
+    max-height: 270px;
+}
+
+.BedWarsLoadingRoot #LoadingPlayersList DOTALoadingScreenPlayer {
+    width: 24%;
+    height: 76px;
+    margin: 4px;
+    padding: 8px;
+    flow-children: right;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#34404b), to(#253039));
+    border: 1px solid #72808b44;
+    border-right: 4px solid #8595a3;
+}
+.BedWarsLoadingRoot #LoadingPlayersList DOTALoadingScreenPlayer.player_state_fully_connected { background-color: gradient(linear, 0% 0%, 100% 0%, from(#304835), to(#3b5141)); border-right-color: #8ccf62; }
+.BedWarsLoadingRoot #LoadingPlayersList DOTALoadingScreenPlayer.player_state_failed { background-color: #482b30; border-right-color: #d56b6b; }
+.BedWarsLoadingRoot #LoadingPlayersList #PlayerAvatar { width: 46px; height: 46px; margin: 0px; horizontal-align: left; vertical-align: center; }
+.BedWarsLoadingRoot #LoadingPlayersList .LoadingPlayerCopy { width: fill-parent-flow(1); height: fit-children; margin-left: 10px; vertical-align: center; flow-children: down; }
+.BedWarsLoadingRoot #LoadingPlayersList #PlayerName { width: 100%; height: 22px; margin: 0px; color: #eef2ed; font-family: Radiance; font-size: 16px; text-overflow: ellipsis; white-space: nowrap; }
+.BedWarsLoadingRoot #LoadingPlayersList #PlayerLoadingStatus { width: 100%; height: 18px; margin: 2px 0px 0px 0px; color: #adbcc9; font-family: Radiance; font-size: 12px; text-overflow: ellipsis; white-space: nowrap; }
+.BedWarsLoadingRoot #LoadingPlayersList .player_state_fully_connected #PlayerLoadingStatus { color: #b3e293; }
+.BedWarsLoadingRoot #LoadingPlayersList .player_state_failed #PlayerLoadingStatus { color: #eea2a2; }
+.BedWarsLoadingRoot #LoadingPlayersList #PlayerEventCrestImage, .BedWarsLoadingRoot #LoadingPlayersList #BattleCupVictoryIcon { visibility: collapse; }
+
+.LocalLoaded .LoadingLowerSafeArea, .is_waiting_for_players .BedWarsLoadingRoot .LoadingLowerSafeArea { visibility: collapse; }
+.LocalLoaded .LoadingPlayersPanel, .is_waiting_for_players .BedWarsLoadingRoot .LoadingPlayersPanel { visibility: visible; }

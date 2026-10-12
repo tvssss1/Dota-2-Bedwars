@@ -1,0 +1,212 @@
+"Trynafix.Perk.BalloonInflate"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/misc/balloon_inflate.vsnd" } }
+                    "volume" { "value" "0.850000" }
+                    "pitch_rand_min" { "value" "-0.025000" }
+                    "pitch_rand_max" { "value" "0.025000" }
+                    "distance_max" { "value" "1400.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.BalloonPop"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/misc/consumable_balloon_pop.vsnd" } }
+                    "volume" { "value" "1.000000" }
+                    "pitch_rand_min" { "value" "-0.040000" }
+                    "pitch_rand_max" { "value" "0.040000" }
+                    "distance_max" { "value" "1500.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.Snapback"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/weapons/hero/weaver/time_lapse.vsnd" } }
+                    "volume" { "value" "1.000000" }
+                    "distance_max" { "value" "1800.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.WildRoll"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/weapons/hero/ogre_magi/multicast01.vsnd" } }
+                    "volume" { "value" "0.900000" }
+                    "pitch_rand_min" { "value" "-0.030000" }
+                    "pitch_rand_max" { "value" "0.030000" }
+                    "distance_max" { "value" "1600.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.WildBlink"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/weapons/hero/antimage/blink_out.vsnd" } }
+                    "volume" { "value" "0.850000" }
+                    "distance_max" { "value" "1500.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.WildBarrier"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/weapons/hero/abaddon/shield_cast.vsnd" } }
+                    "volume" { "value" "0.850000" }
+                    "distance_max" { "value" "1500.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.WildShockwave"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/weapons/hero/magnataur/shockwave_cast.vsnd" } }
+                    "volume" { "value" "0.900000" }
+                    "distance_max" { "value" "1700.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.TreasureBonus"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/items/item_handofmidas.vsnd" } }
+                    "volume" { "value" "0.850000" }
+                    "pitch_rand_min" { "value" "-0.020000" }
+                    "pitch_rand_max" { "value" "0.025000" }
+                    "distance_max" { "value" "1400.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}
+
+"Trynafix.Perk.HoloCast"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files"
+                    {
+                        "value"
+                        {
+                            "value0" "sounds/weapons/hero/phantom_lancer/doppel_cast.vsnd"
+                            "value1" "sounds/weapons/hero/phantom_lancer/doppel_appear.vsnd"
+                        }
+                    }
+                    "volume" { "value" "0.900000" }
+                    "distance_max" { "value" "1700.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}

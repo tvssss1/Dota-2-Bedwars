@@ -1,0 +1,24 @@
+<root>
+    <styles><include src="file://{resources}/styles/custom_game/hope_shop.css" /></styles>
+    <scripts><include src="file://{resources}/scripts/custom_game/hope_shop.js" /></scripts>
+    <Panel class="HopeShopViewport" hittest="false" hittestchildren="true">
+      <Panel id="HopeShopRoot" hittest="false" hittestchildren="true">
+        <Image class="ShopResourcePrecache" src="file://{images}/tower_png.png" />
+        <Image class="ShopResourcePrecache" src="file://{images}/bed_raiders.png" />
+        <Panel id="HopeShopModal" class="Hidden" hittest="false" hittestchildren="true" acceptsfocus="true" oncancel="HopeShop.Close()">
+            <Panel id="HopeShopWindow" hittest="true" hittestchildren="true">
+                <Panel class="ShopHeader">
+                    <Label class="ShopTitle" text="#hope_shop_title" />
+                    <Button class="CloseButton" onactivate="HopeShop.Toggle()"><Label text="×" /></Button>
+                </Panel>
+                <Panel class="ShopStatusRow">
+                    <Label id="HopeContext" text="#hope_shop_checking" />
+                    <Label id="HopeModalBalance" text="" />
+                </Panel>
+                <Panel id="HopeCatalog" flow-children="down" />
+                <Label id="HopeResult" text="" />
+            </Panel>
+        </Panel>
+      </Panel>
+    </Panel>
+</root>

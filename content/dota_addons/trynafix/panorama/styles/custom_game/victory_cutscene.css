@@ -1,0 +1,33 @@
+.VictoryScene { width:100%; height:100%; opacity:0; z-index:1000; transition-property:opacity; transition-duration:.45s; }
+.VictoryScene.Visible { opacity:1; }
+.VictoryVignette { width:100%; height:100%; background-color:gradient(radial,50% 43%,0% 0%,50% 52%,from(#05090b00),color-stop(.48,#03070c55),to(#000e)); opacity:0; transition-property:opacity; transition-duration:1.6s; }
+.Visible .VictoryVignette { opacity:1; }
+.VictoryRays { width:1050px; height:1050px; horizontal-align:center; vertical-align:center; margin-top:-150px; opacity:0; transform:rotateZ(-12deg) scale3d(.72,.72,1); background-color:gradient(radial,50% 50%,0% 0%,50% 50%,from(#d7eeff18),color-stop(.36,#7ec7ff09),to(#0000)); transition-property:opacity,transform; transition-duration:2.8s; }
+.HeroReveal .VictoryRays { opacity:1; transform:rotateZ(7deg) scale3d(1.1,1.1,1); }
+.VictoryLetterbox { width:100%; height:10.5%; background-color:#010203; transition-property:transform; transition-duration:.8s; transition-timing-function:ease-out; }
+.VictoryLetterboxTop { vertical-align:top; transform:translate3d(0,-100%,0); }
+.VictoryLetterboxBottom { vertical-align:bottom; transform:translate3d(0,100%,0); }
+.Visible .VictoryLetterbox { transform:translate3d(0,0,0); }
+.VictoryFlash { width:100%; height:100%; background-color:#f5fbff; opacity:0; transition-property:opacity; transition-duration:.14s; }
+.VictoryFlash.Burst { opacity:.72; }
+.VictoryCard { width:760px; height:190px; horizontal-align:center; vertical-align:bottom; margin-bottom:92px; opacity:0; transform:translate3d(0,40px,0) scale3d(.96,.96,1); background-color:gradient(linear,0% 0%,100% 0%,from(#05090bd0),color-stop(.12,#09131bed),color-stop(.88,#09131bed),to(#05090bd0)); border-top:1px solid #d8e8ee55; border-bottom:1px solid #60798766; box-shadow:#000d 0 14px 38px 0; transition-property:opacity,transform,brightness; transition-duration:.72s; transition-timing-function:ease-out; overflow:clip; }
+.VictoryCard.Shown { opacity:1; transform:translate3d(0,0,0) scale3d(1,1,1); }
+.VictoryCardGlow { width:100%; height:100%; opacity:.45; background-color:gradient(radial,24% 50%,0% 0%,48% 65%,from(#8ed5ff22),to(#0000)); }
+.VictoryAccent { width:5px; height:100%; background-color:#dceff5; box-shadow:#a8e3ff99 0 0 14px 1px; }
+.VictoryAccentLeft { horizontal-align:left; }.VictoryAccentRight { horizontal-align:right; }
+.VictoryContent { width:690px; height:154px; horizontal-align:center; vertical-align:center; flow-children:right; }
+.VictoryPortraitFrame { width:154px; height:154px; vertical-align:center; margin-right:30px; border:2px solid #cce4ee88; box-shadow:#000b 0 8px 24px 0; overflow:clip; opacity:0; transform:translate3d(-24px,0,0); transition-property:opacity,transform; transition-duration:.65s; }
+.Shown .VictoryPortraitFrame { opacity:1; transform:translate3d(0,0,0); }
+.VictoryPortrait { width:100%; height:100%; saturation:.88; brightness:.85; }.VictoryPortraitShade { width:100%; height:100%; background-color:gradient(linear,0% 0%,0% 100%,from(#0000),color-stop(.58,#0000),to(#020608dd)); }
+.VictoryCopy { width:506px; height:150px; vertical-align:center; flow-children:down; }
+.VictoryKicker { width:506px; height:25px; font-size:14px; letter-spacing:5px; color:#aebfc9; text-transform:uppercase; text-shadow:0 2px 8px #000; white-space:nowrap; text-overflow:shrink; opacity:0; transform:translate3d(20px,0,0); transition-property:opacity,transform; transition-duration:.45s; }
+.Shown .VictoryKicker { opacity:1; transform:translate3d(0,0,0); }
+.VictoryTeam { width:506px; height:58px; font-size:43px; font-weight:bold; letter-spacing:2px; color:#fff; text-transform:uppercase; text-shadow:0 0 18px #fff5,0 4px 12px #000; white-space:nowrap; text-overflow:shrink; opacity:0; transform:translate3d(25px,0,0); transition-property:opacity,transform; transition-duration:.6s; }
+.Shown .VictoryTeam { opacity:1; transform:translate3d(0,0,0); }
+.VictoryRule { width:506px; height:2px; margin:0 0 7px 0; background-color:#41515a; }.VictoryRuleCore { width:0%; height:100%; background-color:gradient(linear,0% 0%,100% 0%,from(#fff),to(#fff0)); box-shadow:#d9f4ff77 0 0 6px 1px; transition-property:width; transition-duration:.8s; }.DetailsShown .VictoryRuleCore { width:100%; }
+.VictoryHero { width:506px; height:30px; font-size:22px; letter-spacing:2px; color:#e9f1f5; text-transform:uppercase; white-space:nowrap; text-overflow:shrink; opacity:0; transform:translate3d(0,8px,0); transition-property:opacity,transform; transition-duration:.5s; }.VictoryPlayer { width:506px; height:23px; font-size:16px; color:#9eafb9; white-space:nowrap; text-overflow:ellipsis; opacity:0; transform:translate3d(0,8px,0); transition-property:opacity,transform; transition-duration:.65s; }.DetailsShown .VictoryHero,.DetailsShown .VictoryPlayer { opacity:1; transform:translate3d(0,0,0); }
+.VictoryScene.Red .VictoryAccent,.VictoryScene.Red .VictoryRuleCore { background-color:#ff625c; box-shadow:#ef282899 0 0 14px 1px; }.VictoryScene.Red .VictoryTeam { color:#ff6862; text-shadow:0 0 22px #ef2828aa,0 4px 12px #000; }
+.VictoryScene.Blue .VictoryAccent,.VictoryScene.Blue .VictoryRuleCore { background-color:#60aeff; box-shadow:#1875e899 0 0 14px 1px; }.VictoryScene.Blue .VictoryTeam { color:#65b1ff; text-shadow:0 0 22px #1875e8aa,0 4px 12px #000; }
+.VictoryScene.Green .VictoryAccent,.VictoryScene.Green .VictoryRuleCore { background-color:#6ce993; box-shadow:#18a74e99 0 0 14px 1px; }.VictoryScene.Green .VictoryTeam { color:#70eb97; text-shadow:0 0 22px #18a74eaa,0 4px 12px #000; }
+.VictoryScene.Orange .VictoryAccent,.VictoryScene.Orange .VictoryRuleCore { background-color:#ffb456; box-shadow:#ed771899 0 0 14px 1px; }.VictoryScene.Orange .VictoryTeam { color:#ffb45a; text-shadow:0 0 22px #ed7718aa,0 4px 12px #000; }
+.VictoryScene.Finale .VictoryCard { brightness:1.18; }

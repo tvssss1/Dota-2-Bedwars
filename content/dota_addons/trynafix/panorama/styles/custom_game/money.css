@@ -1,0 +1,183 @@
+.root
+{
+    width: 100%;
+    height: 100%;
+}
+
+#MoneyRoot
+{
+    width: 180px;
+    height: 130px;
+    horizontal-align: right;
+    vertical-align: bottom;
+    margin-right: 5px;
+    margin-bottom: -32px;
+}
+
+.ShopHint
+{
+    width: 68px;
+    height: 25px;
+    margin-top: 28px;
+    border-radius: 2px;
+    box-shadow: fill #00000099 0px 2px 4px 0px;
+    opacity: 0;
+    transform: scale3d(0.82, 0.82, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.08s;
+    z-index: 20;
+}
+
+.ShopHint Label
+{
+    align: center center;
+    color: #e7e8e9;
+    font-family: Reaver, Radiance, FZLanTingHeiS;
+    font-size: 12px;
+    font-weight: semi-bold;
+    text-shadow: 1px 1px 2px 2 #000000e8;
+}
+
+.PurpleShopHint
+{
+    margin-left: 16px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26192ff5), color-stop(0.45, #18131ff5), to(#100d16f5));
+    border: 1px solid #685584cc;
+    border-top: 1px solid #9a82b7cc;
+}
+
+.GreenShopHint
+{
+    margin-left: 106px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#2f2f19f5), color-stop(0.45, #1e1f13f5), to(#16140df5));
+    border: 1px solid #766039cc;
+    border-top: 1px solid #aa8950cc;
+}
+
+#MoneyRoot.ShowShopHints .ShopHint
+{
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+.MoneyCluster
+{
+    background-color: gradient( linear, 0% 0%, 0% 100%, from(#303740f2), color-stop(0.48, #1d232bf2), to(#11161cf2) );
+    border-top: 1px solid #5b646dcc;
+    border-radius: 2px;
+    box-shadow: fill #00000099 0px 2px 5px 0px;
+}
+
+#PurpleMoneyButton{
+    width: 80px;
+    height: 40px;
+    margin-left: 10px;
+    margin-top: 47px;
+    border-radius: 3px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26192ff5), color-stop(0.45, #18131ff5), to(#100d16f5));
+    box-shadow: inset #ffffff10 0px 1px 0px 0px, fill #00000066 0px 1px 2px 0px;
+    overflow: clip;
+    transition-property: brightness, border;
+    transition-duration: 0.08s;
+    transition-timing-function: linear;
+}
+#GreenMoneyButton
+{
+    width: 80px;
+    height: 40px;
+    margin-left: 100px;
+    margin-top: 47px;
+    border-radius: 3px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#2f2f19f5), color-stop(0.45, #1e1f13f5), to(#16140df5));
+    box-shadow: inset #ffffff10 0px 1px 0px 0px, fill #00000066 0px 1px 2px 0px;
+    transition-property: brightness, border;
+    transition-duration: 0.08s;
+    transition-timing-function: linear;
+}
+
+#PurpleMoneyButton
+{
+    border: 1px solid #685584cc;
+    border-top: 1px solid #9a82b7cc;
+}
+
+#GreenMoneyButton
+{
+    border: 1px solid #766039cc;
+    border-top: 1px solid #aa8950cc;
+}
+
+#PurpleMoneyButton:hover,
+#GreenMoneyButton:hover
+{
+    brightness: 1.35;
+}
+
+#PurpleMoneyButton:hover
+{
+    border: 1px solid #9275b8ff;
+}
+
+#GreenMoneyButton:hover
+{
+    border: 1px solid #b28b4fff;
+}
+
+#PurpleMoneyButton:active,
+#GreenMoneyButton:active
+{
+    brightness: 0.75;
+}
+
+.MoneyIcon
+{
+    width: 48px;
+    height: 40px;
+    margin-right: 0px;
+    horizontal-align: right;
+    vertical-align: center;
+    opacity: 1;
+    margin-right: -3px;
+}
+
+#PurpleMoneyButton.HudIntroAnimating,
+#GreenMoneyButton.HudIntroAnimating
+{
+    transition-property: opacity, transform;
+    transition-duration: 1s;
+    transition-timing-function: ease-out;
+}
+
+#PurpleMoneyButton.HudLoadIntro,
+#GreenMoneyButton.HudLoadIntro
+{
+    opacity: 0;
+    transform: translate3d(0px, 75px, 0px);
+}
+
+#PurpleMoney,
+#GreenMoney
+{
+    horizontal-align: left;
+    vertical-align: center;
+    z-index: 5;
+    color: #f7f8fb;
+    font-size: 23px;
+    font-family: Radiance, FZLanTingHeiS;
+    font-weight: semi-bold;
+    letter-spacing: 0px;
+    text-shadow: 1px 1px 2px 2 #000000e8;
+    text-overflow: shrink;
+    width: 40px;
+    text-align: right;
+}
+
+#PurpleMoney
+{
+    color: #eee7ff;
+}
+
+#GreenMoney
+{
+    color: #fff1d1;
+}

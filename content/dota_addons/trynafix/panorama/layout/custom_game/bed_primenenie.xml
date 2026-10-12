@@ -1,0 +1,37 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/delete_everything.js"/>
+        <include src="file://{resources}/scripts/custom_game/add_money.js"/>
+        <include src="file://{resources}/scripts/custom_game/pregame_countdown.js"/>
+    </scripts>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/money.css"/>
+        <include src="file://{resources}/styles/custom_game/pregame_countdown.css"/>
+    </styles>
+    <snippets>
+        <snippet name="Money">
+          <Panel>
+            <Panel id="PurpleShopHint" class="ShopHint PurpleShopHint" hittest="false">
+                <Label text="Home Shop" />
+            </Panel>
+            <Panel id="GreenShopHint" class="ShopHint GreenShopHint" hittest="false">
+                <Label text="Bazaar" />
+            </Panel>
+            <Button id="PurpleMoneyButton" class="MoneyCluster HudLoadIntro HudIntroAnimating" hittest="true">
+                <Label id="PurpleMoney" text="0" />
+                <Image id="PurpleMoneyIcon" class="MoneyIcon" src="file://{images}/arcane_coin_current.png" scaling="stretch-to-fit-preserve-aspect" />
+            </Button>
+            <Button id="GreenMoneyButton" class="MoneyCluster HudLoadIntro HudIntroAnimating" hittest="true">
+                <Label id="GreenMoney" text="0" />
+                <Image id="GreenMoneyIcon" class="MoneyIcon" src="file://{images}/pumpkin_coin_current.png" scaling="stretch-to-fit-preserve-aspect" />
+            </Button>
+          </Panel>
+        </snippet>
+    </snippets>
+    <Panel class="root" hittest="false" hittestchildren="true">
+        <Panel id="PregameCountdownRoot" hittest="false" hittestchildren="false">
+            <Label id="PregameCountdownNumber" text="" />
+            <Label id="PregameCountdownCaption" text="#pregame_countdown_caption" />
+        </Panel>
+    </Panel>
+</root>

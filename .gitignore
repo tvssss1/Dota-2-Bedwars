@@ -1,0 +1,21 @@
+# Ignore everything in the Dota 2 installation by default.
+/*
+
+# Keep these rules in the repository.
+!/.gitignore
+
+# Track only this addon's source content.
+!/content/
+/content/*
+!/content/dota_addons/
+/content/dota_addons/*
+!/content/dota_addons/trynafix/
+!/content/dota_addons/trynafix/**
+
+# Track only this addon's game content.
+!/game/
+/game/*
+!/game/dota_addons/
+/game/dota_addons/*
+!/game/dota_addons/trynafix/
+!/game/dota_addons/trynafix/**

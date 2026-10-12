@@ -1,0 +1,52 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/team_scoreboard.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/team_scoreboard.js" />
+    </scripts>
+    <Panel class="TeamScoreboardViewport" hittest="false" hittestchildren="true">
+        <Panel id="TeamScoreboardRoot" hittest="false" hittestchildren="true">
+          <Panel id="TeamScoreboard" hittest="false" hittestchildren="true">
+            <Panel id="LeftTeams" class="TeamGroup" hittest="false">
+                <Panel id="Team6" class="TeamCard TeamRed" hittest="false">
+                    <Panel class="TeamHeroRoster" flow-children="right">
+                        <Panel id="HeroFrame6_1" class="HeroFrame" hittest="true"><DOTAHeroImage id="Hero6_1" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty6_1" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn6_1" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                        <Panel id="HeroFrame6_2" class="HeroFrame DuoHeroFrame" hittest="true"><DOTAHeroImage id="Hero6_2" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty6_2" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn6_2" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                    </Panel>
+                    <Panel class="KillBadge"><Label id="Kills6" class="KillCount MonoNumbersFont" text="0" /></Panel>
+                    <Panel id="Bed6" class="BedState"><Image class="BedIcon" src="file://{images}/custom_game/recall/bed_red.png"/><Label class="BedDestroyed" text="×" /></Panel>
+                </Panel>
+                <Panel id="Team7" class="TeamCard TeamBlue" hittest="false">
+                    <Panel class="TeamHeroRoster" flow-children="right">
+                        <Panel id="HeroFrame7_1" class="HeroFrame" hittest="true"><DOTAHeroImage id="Hero7_1" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty7_1" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn7_1" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                        <Panel id="HeroFrame7_2" class="HeroFrame DuoHeroFrame" hittest="true"><DOTAHeroImage id="Hero7_2" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty7_2" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn7_2" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                    </Panel>
+                    <Panel class="KillBadge"><Label id="Kills7" class="KillCount MonoNumbersFont" text="0" /></Panel>
+                    <Panel id="Bed7" class="BedState BedBlue"><Image class="BedIcon" src="file://{images}/custom_game/recall/bed_blue.png" scaling="stretch-to-fit-preserve-aspect"/><Label class="BedDestroyed" text="×" /></Panel>
+                </Panel>
+            </Panel>
+            <Panel id="TimerClearance" />
+            <Panel id="RightTeams" class="TeamGroup" hittest="false">
+                <Panel id="Team8" class="TeamCard TeamGreen" hittest="false">
+                    <Panel class="TeamHeroRoster" flow-children="right">
+                        <Panel id="HeroFrame8_1" class="HeroFrame" hittest="true"><DOTAHeroImage id="Hero8_1" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty8_1" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn8_1" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                        <Panel id="HeroFrame8_2" class="HeroFrame DuoHeroFrame" hittest="true"><DOTAHeroImage id="Hero8_2" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty8_2" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn8_2" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                    </Panel>
+                    <Panel class="KillBadge"><Label id="Kills8" class="KillCount MonoNumbersFont" text="0" /></Panel>
+                    <Panel id="Bed8" class="BedState"><Image class="BedIcon" src="file://{images}/custom_game/recall/bed_green.png"/><Label class="BedDestroyed" text="×" /></Panel>
+                </Panel>
+                <Panel id="Team9" class="TeamCard TeamOrange" hittest="false">
+                    <Panel class="TeamHeroRoster" flow-children="right">
+                        <Panel id="HeroFrame9_1" class="HeroFrame" hittest="true"><DOTAHeroImage id="Hero9_1" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty9_1" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn9_1" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                        <Panel id="HeroFrame9_2" class="HeroFrame DuoHeroFrame" hittest="true"><DOTAHeroImage id="Hero9_2" class="HeroIcon" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect"/><Label id="Empty9_2" class="EmptyHero" hittest="false" text="?" /><Label id="Respawn9_2" class="RespawnTime MonoNumbersFont" hittest="false" text="" /></Panel>
+                    </Panel>
+                    <Panel class="KillBadge"><Label id="Kills9" class="KillCount MonoNumbersFont" text="0" /></Panel>
+                    <Panel id="Bed9" class="BedState"><Image class="BedIcon" src="file://{images}/custom_game/recall/bed_orange.png"/><Label class="BedDestroyed" text="×" /></Panel>
+                </Panel>
+            </Panel>
+          </Panel>
+        </Panel>
+    </Panel>
+</root>
+

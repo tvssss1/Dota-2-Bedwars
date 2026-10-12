@@ -1,0 +1,9 @@
+"settings"
+{
+	"mip_algorithm"		"Blur3"
+	"mip_filter_strength"		"2.000000"
+	"nolod"		"1"
+	"minimum_encode_quality"		"3"
+	"maxres"		"64"
+	"maxresmobile"		"64"
+}

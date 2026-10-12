@@ -1,0 +1,253 @@
+.HopeShopViewport {
+    width: 100%;
+    height: 100%;
+    z-index: 60;
+}
+
+#HopeShopRoot {
+    width: 100%;
+    height: 100%;
+}
+
+.ShopResourcePrecache {
+    visibility: collapse;
+}
+
+#HopeShopModal {
+    width: 100%;
+    height: 100%;
+    background-color: #08050cb8;
+    opacity: 1;
+    transition-property: opacity;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+    z-index: 61;
+}
+
+#HopeShopModal.Hidden {
+    opacity: 0;
+}
+
+#HopeShopWindow {
+    width: 780px;
+    height: 850px;
+    padding: 22px;
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26192ff5), color-stop(0.45, #18131ff5), to(#100d16f5));
+    border: 1px solid #a56dc9;
+    border-radius: 18px;
+    box-shadow: #000d 0px 12px 36px 0px;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+    transition-property: transform, opacity;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+#HopeShopModal.Hidden #HopeShopWindow {
+    opacity: 0;
+    transform: translate3d(0px, 24px, 0px) scale3d(0.96, 0.96, 1);
+}
+
+.ShopHeader {
+    width: 100%;
+    height: 58px;
+}
+
+.ShopTitle {
+    margin-left: 4px;
+    vertical-align: center;
+    font-family: Reaver;
+    font-weight: bold;
+    font-size: 36px;
+    letter-spacing: 2px;
+    color: #ead2ff;
+    text-shadow: 0px 2px 8px 2.0 #8c4bb066;
+    text-transform: uppercase;
+}
+
+.CloseButton {
+    width: 44px;
+    height: 44px;
+    horizontal-align: right;
+    vertical-align: center;
+    background-color: #5b3769aa;
+    border: 1px solid #9767ad;
+    border-radius: 22px;
+    transition-property: brightness, transform, background-color;
+    transition-duration: 0.12s;
+}
+
+.CloseButton:hover {
+    brightness: 1.4;
+    transform: rotateZ(5deg) scale3d(1.05, 1.05, 1);
+    background-color: #754687cc;
+}
+
+.CloseButton:active {
+    transform: scale3d(0.94, 0.94, 1);
+}
+
+.CloseButton Label {
+    align: center center;
+    transform: translateY(-1px);
+    font-family: Radiance;
+    font-size: 30px;
+    color: white;
+}
+
+.ShopStatusRow {
+    width: 100%;
+    height: 48px;
+    margin: 2px 0px 10px 0px;
+    padding: 0px 12px;
+    flow-children: right;
+    background-color: #0f0c16a8;
+    border: 1px solid #5e466b;
+    border-radius: 9px;
+}
+
+#HopeContext {
+    width: 470px;
+    vertical-align: center;
+    font-family: Radiance;
+    font-size: 16px;
+    color: #eadcf3;
+    text-overflow: shrink;
+    white-space: nowrap;
+}
+
+#HopeModalBalance {
+    width: 220px;
+    vertical-align: center;
+    text-align: right;
+    font-size: 20px;
+    font-weight: semi-bold;
+    color: #d99cff;
+}
+
+#HopeCatalog {
+    width: 100%;
+    height: 630px;
+    padding: 2px 6px 2px 2px;
+    flow-children: down;
+    overflow: squish scroll;
+}
+
+.ShopEntry {
+    width: 100%;
+    height: 116px;
+    min-height: 116px;
+    margin-bottom: 8px;
+    padding: 10px 12px;
+    flow-children: right;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#33273ddd), to(#211a29dd));
+    border: 1px solid #53425f;
+    border-radius: 13px;
+    box-shadow: #0007 0px 4px 10px 0px;
+    transition-property: background-color, brightness, transform, border, box-shadow;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-out;
+}
+
+.ShopEntry:hover {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#473354ee), to(#292032ee));
+    border: 1px solid #8d65a5;
+    box-shadow: #8e52ae33 0px 4px 14px 0px;
+    brightness: 1.08;
+    transform: translate3d(4px, -1px, 0px);
+}
+
+.EntryIcon {
+    width: 88px;
+    height: 72px;
+    min-width: 88px;
+    margin-top: 12px;
+    border: 1px solid #725986;
+    border-radius: 9px;
+    box-shadow: #0008 0px 3px 8px 0px;
+}
+
+.EntryInfo {
+    width: 450px;
+    height: 72px;
+    margin-left: 14px;
+    flow-children: down;
+    vertical-align: center;
+}
+
+.EntryName {
+    height: 28px;
+    font-family: Reaver;
+    font-weight: semi-bold;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #f7f0fa;
+}
+
+.EntryDesc {
+    width: 440px;
+    height: 40px;
+    font-family: Radiance;
+    font-size: 15px;
+    color: #cfc5d3;
+    white-space: normal;
+    text-overflow: shrink;
+}
+
+.BuyButton {
+    width: 135px;
+    height: 48px;
+    vertical-align: center;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#9b5bc4), to(#62347f));
+    border: 1px solid #c386e3;
+    border-radius: 9px;
+    box-shadow: #0008 0px 3px 8px 0px;
+    transition-property: brightness, transform, background-color, box-shadow;
+    transition-duration: 0.1s;
+    transition-timing-function: ease-out;
+}
+
+.BuyButton:hover {
+    brightness: 1.35;
+    transform: translateY(-2px) scale3d(1.03, 1.03, 1);
+    box-shadow: #a968c666 0px 3px 12px 0px;
+}
+
+.BuyButton:active {
+    transform: translateY(1px) scale3d(0.97, 0.97, 1);
+}
+
+.BuyButton:disabled {
+    saturation: 0;
+    opacity: 0.42;
+    border: 1px solid #675d6d;
+    box-shadow: none;
+}
+
+.BuyButton Label {
+    align: center center;
+    font-family: Reaver;
+    font-weight: semi-bold;
+    font-size: 18px;
+    color: white;
+}
+
+#HopeResult {
+    width: 100%;
+    height: 38px;
+    margin-top: 3px;
+    vertical-align: center;
+    font-family: Radiance;
+    font-weight: semi-bold;
+    font-size: 19px;
+    color: #ff8888;
+    text-align: center;
+    white-space: nowrap;
+    text-overflow: shrink;
+}
+
+#HopeResult.Success {
+    color: #7ee99a;
+}

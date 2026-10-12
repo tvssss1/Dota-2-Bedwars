@@ -1,0 +1,8 @@
+BW_Solo
+{
+	material materials/overviews/BW_Solo.vmat
+	pos_x -4548
+	pos_y 6656
+	scale 13.000
+}
+

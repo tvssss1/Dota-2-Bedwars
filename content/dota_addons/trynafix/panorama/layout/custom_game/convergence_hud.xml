@@ -1,0 +1,20 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/convergence_hud.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/convergence_hud.js" />
+    </scripts>
+    <Panel class="ConvergenceViewport" hittest="false" hittestchildren="true">
+        <Panel id="ConvergenceRoot" hittest="false" hittestchildren="true">
+            <Panel id="ConvergenceOffer" class="ConvergenceOffer" hittest="true" hittestchildren="true">
+                <Panel class="OfferTopAccent" hittest="false" />
+                <Panel id="OfferCards" class="OfferCards" />
+                <Panel class="OfferTimeoutTrack">
+                    <Panel id="OfferTimeoutFill" class="OfferTimeoutFill" />
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>
+

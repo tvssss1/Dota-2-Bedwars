@@ -1,0 +1,185 @@
+.AbilityDraftViewport {
+    width: 100%;
+    height: 100%;
+    z-index: 21;
+}
+
+#AbilityDraftRoot {
+    width: 100%;
+    height: 100%;
+}
+
+.AbilityOffer {
+    width: 888px;
+    height: 276px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    margin-bottom: 190px;
+    padding: 8px 16px 7px 16px;
+    flow-children: down;
+    overflow: clip;
+    background-color: #101316f2;
+    border: 1px solid #30363b;
+    border-radius: 4px;
+    box-shadow: none;
+    opacity: 0;
+    transform: translate3d(0px, 24px, 0px) scale3d(0.985, 0.985, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+}
+
+.AbilityOffer.Visible {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+}
+
+.AbilityOffer.Ultimate {
+    border-color: #30363b;
+    background-color: #101316f2;
+}
+
+.OfferHeader {
+    width: 100%;
+    height: 38px;
+}
+
+.OfferTitle {
+    width: 100%;
+    height: 38px;
+    vertical-align: center;
+    font-family: Reaver;
+    font-size: 20px;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    color: #d0d4d6;
+    text-align: center;
+    text-overflow: shrink;
+    text-transform: uppercase;
+    text-shadow: none;
+}
+
+.AbilityOfferCards {
+    width: 840px;
+    height: 204px;
+    horizontal-align: center;
+    flow-children: right-wrap;
+}
+
+.AbilityOfferCard {
+    width: 272px;
+    height: 60px;
+    margin: 4px;
+    padding: 3px;
+    flow-children: right;
+    overflow: clip;
+    background-color: #181c1f;
+    border: 1px solid #343a3f;
+    border-radius: 3px;
+    box-shadow: none;
+    transition-property: background-color, border;
+    transition-duration: 0.12s;
+    transition-timing-function: ease-out;
+}
+
+.AbilityOfferCard:last-child {
+    margin-bottom: 4px;
+}
+
+.AbilityOfferCard:hover {
+    background-color: #23282c;
+    border-color: #616970;
+    box-shadow: none;
+}
+
+.AbilityOfferCard:active {
+    background-color: #2b3034;
+}
+
+.AbilityOffer.Choosing .AbilityOfferCard {
+    saturation: 0.15;
+    brightness: 0.4;
+}
+
+.AbilityOffer.Choosing .AbilityOfferCard.Selected {
+    saturation: 1;
+    brightness: 1.5;
+    border-color: #a0a6aa;
+    box-shadow: none;
+}
+
+.AbilityOfferImage {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    margin-left: 6px;
+    vertical-align: center;
+    border: 1px solid #3c4247;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.AbilityName {
+    width: 194px;
+    height: 58px;
+    margin-left: 12px;
+    vertical-align: center;
+    font-family: Reaver;
+    font-size: 15px;
+    font-weight: semi-bold;
+    color: #c9ced1;
+    text-overflow: shrink;
+    text-transform: none;
+}
+
+.OfferTimerRow {
+    width: 840px;
+    height: 10px;
+    horizontal-align: center;
+}
+
+.OfferTimerTrack {
+    width: 840px;
+    height: 4px;
+    margin-left: 0px;
+    vertical-align: center;
+    background-color: #090b0c;
+    border: 1px solid #2d3236;
+    border-radius: 2px;
+}
+
+.OfferTimerFill {
+    width: 100%;
+    height: 100%;
+    background-color: #747b80;
+    border-radius: 2px;
+    box-shadow: none;
+}
+
+.AbilityOffer.Ultimate .OfferTimerFill {
+    background-color: #747b80;
+}
+
+.NextAbilityTimer {
+    width: 230px;
+    height: 28px;
+    horizontal-align: center;
+    vertical-align: top;
+    margin-top: 66px;
+    opacity: 0;
+    transition-property: opacity;
+    transition-duration: 0.12s;
+    font-family: Reaver;
+    font-size: 14px;
+    font-weight: semi-bold;
+    color: #c9ced1;
+    text-align: center;
+    text-shadow: 0px 1px 2px #000000;
+}
+
+.NextAbilityTimer.Visible {
+    opacity: 1;
+}
+
+.AspectRatio4x3 .AbilityOffer,
+.AspectRatio5x4 .AbilityOffer { margin-bottom: 165px; }

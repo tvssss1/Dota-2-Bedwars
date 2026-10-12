@@ -1,0 +1,644 @@
+.DraftRoot {
+    width: 100%;
+    height: 100%;
+    z-index: 1000;
+    overflow: clip;
+    font-family: Reaver;
+    background-color: #06090dfd;
+}
+
+.DraftBackdrop {
+    width: 100%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#16090f), color-stop(0.48, #0d080c), to(#050507));
+}
+
+.DraftBackdropGlow {
+    width: 100%;
+    height: 100%;
+    opacity: 0.35;
+    background-color: gradient(radial, 50% 34%, 0% 0%, 72% 72%, from(#7b293d55), color-stop(0.42, #38121d22), to(#00000000));
+}
+
+.DraftSlash {
+    width: 420px;
+    height: 1500px;
+    y: -190px;
+    transform: rotateZ(-42deg);
+    opacity: 0.24;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#5f1729), to(#18070d));
+}
+
+.DraftSlashOne { x: -120px; }
+.DraftSlashTwo { x: 410px; }
+.DraftSlashThree { x: 940px; }
+.DraftSlashFour { x: 1470px; }
+
+.DraftTopBar {
+    width: 1420px;
+    height: 126px;
+    margin-top: 14px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+/* The hidden orange card must not leave the three-team group left-aligned. */
+.DraftRoot.DraftDuoMode .DraftTopBar {
+    width: 1356px;
+}
+
+.DraftTimer.DraftTimerBottom {
+    width: 220px;
+    height: 66px;
+    margin: 0px 0px 18px 0px;
+    padding: 0px 10px;
+    horizontal-align: center;
+    vertical-align: bottom;
+    flow-children: right;
+    z-index: 20;
+    border-radius: 8px;
+}
+
+.DraftTimerBottom .DraftTimerCaption {
+    width: 65px;
+    height: 30px;
+    margin-top: 19px;
+    font-size: 11px;
+    letter-spacing: 2px;
+}
+
+.DraftTimerBottom .DraftTimerValue {
+    width: 76px;
+    height: 60px;
+    font-size: 43px;
+}
+
+.DraftTimerBottom .DraftTimerRule {
+    width: 45px;
+    margin-top: 31px;
+}
+
+.DraftTeam {
+    width: 312px;
+    height: 104px;
+    margin: 9px 5px 0px 5px;
+    flow-children: right;
+    overflow: clip;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26323de8), to(#11171de8));
+    border: 1px solid #52606c;
+    border-radius: 5px;
+    box-shadow: #000c 0px 5px 18px 0px;
+    transition-property: border, box-shadow, brightness;
+    transition-duration: 0.18s;
+}
+
+.DraftTeam.DraftLocalTeam {
+    border: 2px solid #d3b76e;
+    box-shadow: #d6b65b44 0px 0px 16px 0px;
+    brightness: 1.08;
+}
+
+.DraftTeamColor {
+    width: 6px;
+    height: 100%;
+}
+
+.DraftTeamRed .DraftTeamColor { background-color: #e45a60; }
+.DraftTeamBlue .DraftTeamColor { background-color: #58a8ef; }
+.DraftTeamGreen .DraftTeamColor { background-color: #62c378; }
+.DraftTeamOrange .DraftTeamColor { background-color: #ee9949; }
+
+.DraftTeamBody {
+    width: fill-parent-flow(1);
+    height: 100%;
+}
+
+.DraftTeamRoster {
+    x: 8px;
+    y: 9px;
+    width: 296px;
+    height: 86px;
+    flow-children: right;
+}
+
+.DraftPlayerSlot {
+    width: fill-parent-flow(1);
+    height: 78px;
+    flow-children: right;
+    overflow: clip;
+}
+
+.DraftDuoPlayerSlot {
+    visibility: collapse;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeam {
+    width: 442px;
+    height: 112px;
+}
+
+.DraftRoot.DraftDuoMode .DraftTopBar {
+    height: 134px;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamBody {
+    padding: 5px 7px 5px 7px;
+    flow-children: down;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamRoster {
+    x: 0px;
+    y: 0px;
+    width: 100%;
+    height: 78px;
+}
+
+.DraftRoot.DraftDuoMode .DraftDuoPlayerSlot {
+    visibility: visible;
+}
+
+.DraftRoot.DraftDuoMode .DraftDuoPlayerSlot {
+    padding-left: 7px;
+    border-left: 1px solid #77838d33;
+}
+
+.DraftTeamHeroFrame {
+    width: 134px;
+    height: 75px;
+    margin: 5px 8px 0px 1px;
+    background-color: #06090d;
+    border: 1px solid #58636c;
+    box-shadow: inset #000c 0px 0px 8px 0px;
+}
+
+.DraftTeamHeroPortrait {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    saturation: 0.7;
+    transition-property: opacity, saturation, brightness;
+    transition-duration: 0.2s;
+}
+
+.DraftPlayerSlotHasHero .DraftTeamHeroPortrait {
+    opacity: 1;
+    saturation: 1;
+}
+
+.DraftTeamEmptyHero {
+    horizontal-align: center;
+    vertical-align: center;
+    color: #66717b;
+    font-size: 42px;
+    font-weight: bold;
+    text-shadow: 0px 2px 5px #000;
+}
+
+.DraftTeamDetails {
+    width: 154px;
+    height: 67px;
+    margin-top: 29px;
+    flow-children: down;
+}
+
+.DraftTeamName {
+    x: 143px;
+    y: 10px;
+    width: 154px;
+    height: 24px;
+    color: #f0e8d8;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.DraftTeamPlayer {
+    width: 100%;
+    height: 24px;
+    margin-top: 0px;
+    color: #aeb8c0;
+    font-family: Radiance;
+    font-size: 15px;
+    text-overflow: ellipsis;
+}
+
+.DraftTeamHeroName {
+    width: 100%;
+    height: 28px;
+    margin-top: 2px;
+    color: #77838d;
+    font-family: Radiance;
+    font-size: 14px;
+    font-weight: semi-bold;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.DraftPlayerSlotHasHero .DraftTeamHeroName { color: #e5d6a9; }
+
+.DraftRoot.DraftDuoMode .DraftTeamHeroFrame {
+    width: 88px;
+    height: 57px;
+    margin-right: 6px;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamName {
+    x: 0px;
+    y: 0px;
+    width: 100%;
+    height: 23px;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamDetails {
+    height: 62px;
+    margin-top: 5px;
+    width: fill-parent-flow(1);
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamPlayer {
+    height: 22px;
+    font-size: 13px;
+}
+
+.DraftRoot.DraftDuoMode .DraftTeamHeroName {
+    height: 25px;
+    font-size: 12px;
+}
+
+.DraftTimer {
+    width: 112px;
+    height: 122px;
+    margin: 0px 4px;
+    flow-children: down;
+    background-color: gradient(radial, 50% 45%, 0% 0%, 70% 70%, from(#293641), to(#090d11));
+    border: 1px solid #7b858c;
+    border-radius: 0px 0px 9px 9px;
+    box-shadow: #000e 0px 6px 20px 0px;
+}
+
+.DraftTimerCaption {
+    width: 100%;
+    height: 22px;
+    margin-top: 9px;
+    color: #9ca8b0;
+    font-size: 12px;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.DraftTimerValue {
+    width: 100%;
+    height: 66px;
+    color: #eee9dc;
+    font-size: 54px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 2px 10px #000;
+}
+
+.DraftTimerValue.DraftTimerUrgent {
+    color: #ff7777;
+    text-shadow: 0px 0px 12px #ff333388;
+}
+
+.DraftTimerRule {
+    width: 68px;
+    height: 2px;
+    horizontal-align: center;
+    background-color: #b89c5d;
+    box-shadow: #d0ae5c66 0px 0px 6px 0px;
+}
+
+.DraftMain {
+    width: 1720px;
+    height: 900px;
+    y: 142px;
+    horizontal-align: center;
+    flow-children: down;
+}
+
+.DraftHeading {
+    width: 100%;
+    height: 92px;
+    flow-children: down;
+}
+
+.DraftEyebrow {
+    width: 100%;
+    height: 17px;
+    color: #a58c5c;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.DraftTitle {
+    width: 100%;
+    height: 46px;
+    margin-top: 1px;
+    color: #f1eee7;
+    font-size: 38px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0px 2px 8px #000;
+    text-transform: uppercase;
+}
+
+.DraftHeadingBottom {
+    width: 100%;
+    height: 27px;
+    flow-children: right;
+}
+
+.DraftStatus {
+    width: fill-parent-flow(1);
+    height: 25px;
+    margin-left: 20px;
+    color: #b8c1c8;
+    font-family: Radiance;
+    font-size: 16px;
+}
+
+.DraftStatus.DraftStatusError { color: #ff7777; }
+
+.DraftHeroSearch {
+    width: 340px;
+    height: 27px;
+    padding: 2px 11px 0px 11px;
+    color: #e5e8e9;
+    font-family: Radiance;
+    font-size: 16px;
+    background-color: #08090ccc;
+    border: 1px solid #4a5158;
+    border-radius: 3px;
+    transition-property: border, box-shadow, background-color;
+    transition-duration: 0.12s;
+}
+
+.DraftHeroSearch:hover,
+.DraftHeroSearch:focus {
+    background-color: #10151bcc;
+    border: 1px solid #b59b60;
+    box-shadow: #b59b6033 0px 0px 7px 0px;
+}
+
+.DraftAvailableCount {
+    width: 260px;
+    height: 25px;
+    margin-right: 20px;
+    color: #bba269;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: right;
+    text-transform: uppercase;
+}
+
+.DraftPool {
+    width: 100%;
+    height: 790px;
+    padding: 10px 15px 12px 15px;
+    flow-children: right;
+    overflow: clip;
+    background-color: #0b080be8;
+    border: 1px solid #3f4a53;
+    border-radius: 8px;
+    box-shadow: inset #000c 0px 3px 18px 0px;
+}
+
+.DraftAttributeSection {
+    width: fill-parent-flow(1);
+    height: 100%;
+    min-height: 0px;
+    margin: 0px 5px;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#21171ddd), to(#09090bdd));
+    border: 1px solid #3b3036;
+    box-shadow: #000a 0px 3px 12px 0px;
+}
+
+.DraftAttributeHeader {
+    width: 100%;
+    height: 28px;
+    flow-children: right;
+    padding: 0px 8px;
+    border-bottom: 1px solid #534049;
+}
+
+.DraftAttributeGem {
+    width: 11px;
+    height: 11px;
+    margin: 7px 9px 0px 3px;
+    transform: rotateZ(45deg);
+    box-shadow: #000 0px 1px 3px 0px;
+}
+
+.DraftStrength .DraftAttributeGem { background-color: #d85656; }
+.DraftAgility .DraftAttributeGem { background-color: #55bc72; }
+.DraftIntelligence .DraftAttributeGem { background-color: #559bd7; }
+.DraftUniversal .DraftAttributeGem { background-color: #a974cb; }
+
+.DraftAttributeName {
+    width: fill-parent-flow(1);
+    height: 27px;
+    color: #c8d0d5;
+    font-size: 15px;
+    font-weight: semi-bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.DraftAttributeCount {
+    width: 50px;
+    height: 27px;
+    color: #707c85;
+    font-size: 14px;
+    text-align: right;
+}
+
+.DraftHeroGrid {
+    width: 100%;
+    height: fill-parent-flow(1);
+    min-height: 0px;
+    padding: 7px 5px;
+    flow-children: right-wrap;
+    overflow: squish scroll;
+}
+
+.DraftHeroCard {
+    width: 124px;
+    height: 150px;
+    margin: 3px 3px;
+    overflow: clip;
+    background-color: #151d24;
+    border: 1px solid #3e4a54;
+    box-shadow: #000b 0px 2px 5px 0px;
+    transition-property: transform, brightness, border, box-shadow;
+    transition-duration: 0.11s;
+    transition-timing-function: ease-out;
+}
+
+.DraftHeroCard:hover {
+    z-index: 5;
+    transform: scale3d(1.07, 1.07, 1);
+    brightness: 1.2;
+    border: 1px solid #d4b86f;
+    box-shadow: #d4b86f55 0px 0px 10px 0px;
+}
+
+.DraftHeroCard:active { transform: scale3d(1.02, 1.02, 1); }
+
+.DraftPickPending .DraftHeroCard {
+    saturation: 0.3;
+    brightness: 0.65;
+}
+
+.DraftHeroPortrait {
+    width: 100%;
+    height: 100%;
+}
+
+.DraftHeroShade {
+    width: 100%;
+    height: 34px;
+    vertical-align: bottom;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#0000), to(#000e));
+}
+
+.DraftHeroName {
+    width: 100%;
+    height: 25px;
+    padding: 5px 3px 0px 3px;
+    vertical-align: bottom;
+    color: #f2f2f2;
+    font-family: Radiance;
+    font-size: 12px;
+    font-weight: semi-bold;
+    text-align: center;
+    text-overflow: shrink;
+    text-shadow: 0px 1px 3px #000;
+    text-transform: uppercase;
+}
+
+.DraftLockedOverlay {
+    width: 620px;
+    height: 240px;
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: down;
+    opacity: 0;
+    visibility: collapse;
+    background-color: gradient(radial, 50% 45%, 0% 0%, 65% 65%, from(#27382e), to(#0a100d));
+    border: 2px solid #78b987;
+    border-radius: 10px;
+    box-shadow: #000e 0px 10px 30px 0px;
+}
+
+.DraftLocalLocked .DraftPool {
+    saturation: 0.1;
+    brightness: 0.35;
+}
+
+.DraftLocalLocked .DraftLockedOverlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+.DraftLockedCheck {
+    width: 100%;
+    height: 90px;
+    margin-top: 18px;
+    color: #87d197;
+    font-size: 70px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 12px #4fc26b77;
+}
+
+.DraftLockedTitle {
+    width: 100%;
+    height: 36px;
+    color: #d8eadc;
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.DraftLockedHero {
+    width: 100%;
+    height: 35px;
+    margin-top: 7px;
+    color: #d7bd78;
+    font-family: Radiance;
+    font-size: 23px;
+    font-weight: semi-bold;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.AspectRatio4x3 .DraftTopBar,
+.AspectRatio5x4 .DraftTopBar { width: 1190px; }
+
+.AspectRatio4x3 .DraftRoot.DraftDuoMode .DraftTopBar,
+.AspectRatio5x4 .DraftRoot.DraftDuoMode .DraftTopBar { width: 1110px; }
+
+.AspectRatio4x3 .DraftTeam,
+.AspectRatio5x4 .DraftTeam { width: 254px; }
+
+.AspectRatio4x3 .DraftTeamHeroFrame,
+.AspectRatio5x4 .DraftTeamHeroFrame {
+    width: 105px;
+    height: 59px;
+    margin-top: 21px;
+}
+
+.AspectRatio4x3 .DraftTeamDetails,
+.AspectRatio5x4 .DraftTeamDetails { width: 126px; }
+
+.AspectRatio4x3 .DraftTeamName,
+.AspectRatio5x4 .DraftTeamName {
+    x: 116px;
+    width: 126px;
+}
+
+.AspectRatio4x3 .DraftRoot.DraftDuoMode .DraftTeam,
+.AspectRatio5x4 .DraftRoot.DraftDuoMode .DraftTeam { width: 360px; }
+
+.AspectRatio4x3 .DraftRoot.DraftDuoMode .DraftTeamHeroFrame,
+.AspectRatio5x4 .DraftRoot.DraftDuoMode .DraftTeamHeroFrame {
+    width: 68px;
+    height: 50px;
+    margin-top: 8px;
+    margin-right: 4px;
+}
+
+.AspectRatio4x3 .DraftRoot.DraftDuoMode .DraftTeamDetails,
+.AspectRatio5x4 .DraftRoot.DraftDuoMode .DraftTeamDetails { width: fill-parent-flow(1); }
+
+.AspectRatio4x3 .DraftMain,
+.AspectRatio5x4 .DraftMain { width: 1180px; }
+
+.AspectRatio4x3 .DraftHeroCard,
+.AspectRatio5x4 .DraftHeroCard {
+    width: 82px;
+    height: 110px;
+    margin: 2px;
+}
+
+.AspectRatio16x10 .DraftMain { width: 1480px; }
+
+.AspectRatio16x10 .DraftHeroCard {
+    width: 105px;
+    height: 135px;
+}
+
+.AspectRatio4x3 .DraftHeroSearch,
+.AspectRatio5x4 .DraftHeroSearch { width: 230px; }
+
+.AspectRatio16x10 .DraftHeroSearch { width: 290px; }
+

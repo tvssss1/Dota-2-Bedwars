@@ -1,0 +1,147 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/hero_picker.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/hero_picker.js" />
+    </scripts>
+
+    <Panel class="DraftRoot">
+        <Panel class="DraftBackdrop" />
+        <Panel class="DraftBackdropGlow" />
+        <Panel class="DraftSlash DraftSlashOne" />
+        <Panel class="DraftSlash DraftSlashTwo" />
+        <Panel class="DraftSlash DraftSlashThree" />
+        <Panel class="DraftSlash DraftSlashFour" />
+
+        <Panel id="DraftTopBar" class="DraftTopBar" flow-children="right">
+            <Panel id="DraftTeam6" class="DraftTeam DraftTeamRed" flow-children="right">
+                <Panel class="DraftTeamColor" />
+                <Panel class="DraftTeamBody" flow-children="down">
+                    <Label class="DraftTeamName" text="#team_picker_red" />
+                    <Panel class="DraftTeamRoster" flow-children="right">
+                        <Panel id="DraftPlayerSlot6_1" class="DraftPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero6_1" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty6_1" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer6_1" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName6_1" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                        <Panel id="DraftPlayerSlot6_2" class="DraftPlayerSlot DraftDuoPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero6_2" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty6_2" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer6_2" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName6_2" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+
+            <Panel id="DraftTeam7" class="DraftTeam DraftTeamBlue" flow-children="right">
+                <Panel class="DraftTeamColor" />
+                <Panel class="DraftTeamBody" flow-children="down">
+                    <Label class="DraftTeamName" text="#team_picker_blue" />
+                    <Panel class="DraftTeamRoster" flow-children="right">
+                        <Panel id="DraftPlayerSlot7_1" class="DraftPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero7_1" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty7_1" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer7_1" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName7_1" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                        <Panel id="DraftPlayerSlot7_2" class="DraftPlayerSlot DraftDuoPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero7_2" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty7_2" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer7_2" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName7_2" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+
+            <Panel id="DraftTimerPanel" class="DraftTimer" flow-children="down">
+                <Label id="DraftTimerCaption" class="DraftTimerCaption" text="#draft_timer" />
+                <Label id="DraftTimerValue" class="DraftTimerValue MonoNumbersFont" text="20" />
+                <Panel class="DraftTimerRule" />
+            </Panel>
+
+            <Panel id="DraftTeam8" class="DraftTeam DraftTeamGreen" flow-children="right">
+                <Panel class="DraftTeamColor" />
+                <Panel class="DraftTeamBody" flow-children="down">
+                    <Label class="DraftTeamName" text="#team_picker_green" />
+                    <Panel class="DraftTeamRoster" flow-children="right">
+                        <Panel id="DraftPlayerSlot8_1" class="DraftPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero8_1" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty8_1" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer8_1" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName8_1" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                        <Panel id="DraftPlayerSlot8_2" class="DraftPlayerSlot DraftDuoPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero8_2" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty8_2" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer8_2" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName8_2" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+
+            <Panel id="DraftTeam9" class="DraftTeam DraftTeamOrange" flow-children="right">
+                <Panel class="DraftTeamColor" />
+                <Panel class="DraftTeamBody" flow-children="down">
+                    <Label class="DraftTeamName" text="#team_picker_orange" />
+                    <Panel class="DraftTeamRoster" flow-children="right">
+                        <Panel id="DraftPlayerSlot9_1" class="DraftPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero9_1" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty9_1" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer9_1" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName9_1" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                        <Panel id="DraftPlayerSlot9_2" class="DraftPlayerSlot DraftDuoPlayerSlot" flow-children="right">
+                            <Panel class="DraftTeamHeroFrame"><DOTAHeroImage id="DraftTeamHero9_2" class="DraftTeamHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" /><Label id="DraftTeamEmpty9_2" class="DraftTeamEmptyHero" text="?" /></Panel>
+                            <Panel class="DraftTeamDetails" flow-children="down"><Label id="DraftTeamPlayer9_2" class="DraftTeamPlayer" text="#draft_empty_team" /><Label id="DraftTeamHeroName9_2" class="DraftTeamHeroName" text="#draft_waiting_pick" /></Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+        </Panel>
+
+        <Panel class="DraftMain" flow-children="down">
+            <Panel class="DraftHeading" flow-children="down">
+                <Label class="DraftEyebrow" text="#draft_eyebrow" />
+                <Label class="DraftTitle" text="#draft_title" />
+                <Panel class="DraftHeadingBottom" flow-children="right">
+                    <Label id="DraftStatus" class="DraftStatus" text="#draft_loading" />
+                    <TextEntry id="DraftHeroSearch" class="DraftHeroSearch" />
+                    <Label id="DraftAvailableCount" class="DraftAvailableCount MonoNumbersFont" text="0" />
+                </Panel>
+            </Panel>
+
+            <Panel id="DraftPool" class="DraftPool" flow-children="down">
+                <Panel class="DraftAttributeSection DraftStrength" flow-children="down">
+                    <Panel class="DraftAttributeHeader" flow-children="right">
+                        <Panel class="DraftAttributeGem" />
+                        <Label class="DraftAttributeName" text="#draft_attribute_strength" />
+                        <Label id="DraftCountStrength" class="DraftAttributeCount MonoNumbersFont" text="0" />
+                    </Panel>
+                    <Panel id="DraftGridStrength" class="DraftHeroGrid" />
+                </Panel>
+                <Panel class="DraftAttributeSection DraftAgility" flow-children="down">
+                    <Panel class="DraftAttributeHeader" flow-children="right">
+                        <Panel class="DraftAttributeGem" />
+                        <Label class="DraftAttributeName" text="#draft_attribute_agility" />
+                        <Label id="DraftCountAgility" class="DraftAttributeCount MonoNumbersFont" text="0" />
+                    </Panel>
+                    <Panel id="DraftGridAgility" class="DraftHeroGrid" />
+                </Panel>
+                <Panel class="DraftAttributeSection DraftIntelligence" flow-children="down">
+                    <Panel class="DraftAttributeHeader" flow-children="right">
+                        <Panel class="DraftAttributeGem" />
+                        <Label class="DraftAttributeName" text="#draft_attribute_intelligence" />
+                        <Label id="DraftCountIntelligence" class="DraftAttributeCount MonoNumbersFont" text="0" />
+                    </Panel>
+                    <Panel id="DraftGridIntelligence" class="DraftHeroGrid" />
+                </Panel>
+                <Panel class="DraftAttributeSection DraftUniversal" flow-children="down">
+                    <Panel class="DraftAttributeHeader" flow-children="right">
+                        <Panel class="DraftAttributeGem" />
+                        <Label class="DraftAttributeName" text="#draft_attribute_universal" />
+                        <Label id="DraftCountUniversal" class="DraftAttributeCount MonoNumbersFont" text="0" />
+                    </Panel>
+                    <Panel id="DraftGridUniversal" class="DraftHeroGrid" />
+                </Panel>
+            </Panel>
+
+            <Panel id="DraftLockedOverlay" class="DraftLockedOverlay" flow-children="down">
+                <Label class="DraftLockedCheck" text="✓" />
+                <Label class="DraftLockedTitle" text="#draft_locked" />
+                <Label id="DraftLockedHero" class="DraftLockedHero" text="" />
+            </Panel>
+        </Panel>
+    </Panel>
+</root>
+

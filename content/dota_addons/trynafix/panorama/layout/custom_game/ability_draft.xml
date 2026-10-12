@@ -1,0 +1,24 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/ability_draft.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/ability_draft.js" />
+    </scripts>
+    <Panel class="AbilityDraftViewport" hittest="false" hittestchildren="true">
+        <Panel id="AbilityDraftRoot" hittest="false" hittestchildren="true">
+            <Panel id="AbilityOffer" class="AbilityOffer" hittest="false" hittestchildren="false">
+                <Panel class="OfferHeader" hittest="false">
+                    <Label id="OfferTitle" class="OfferTitle" text="#ability_draft_basic_title" />
+                </Panel>
+                <Panel id="AbilityOfferCards" class="AbilityOfferCards" />
+                <Panel class="OfferTimerRow" hittest="false">
+                    <Panel class="OfferTimerTrack">
+                        <Panel id="AbilityOfferTimerFill" class="OfferTimerFill" />
+                    </Panel>
+                </Panel>
+            </Panel>
+            <Label id="NextAbilityTimer" class="NextAbilityTimer" text="" hittest="false" />
+        </Panel>
+    </Panel>
+</root>

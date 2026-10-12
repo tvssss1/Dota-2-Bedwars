@@ -1,0 +1,18 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/errors.js"/>
+        <include src="file://{resources}/scripts/custom_game/native_hero_header.js"/>
+    </scripts>
+    <Panel>
+        <CustomUIElement type="GameSetup" layoutfile="file://{resources}/layout/custom_game/team_picker.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/arcane_chest_world.xml" hittest="false" hittestchildren="false" acceptsinput="false" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/ability_draft.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/convergence_hud.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/bed_primenenie.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/team_scoreboard.xml" hittest="false" hittestchildren="false" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/bed_channel.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/hope_shop.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/island_shop.xml" />
+        <CustomUIElement type="Hud" layoutfile="file://{resources}/layout/custom_game/victory_cutscene.xml" hittest="false" hittestchildren="false" />
+    </Panel>
+</root>

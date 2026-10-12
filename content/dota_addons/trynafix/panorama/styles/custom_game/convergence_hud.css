@@ -1,0 +1,219 @@
+.ConvergenceViewport {
+    width: 100%;
+    height: 100%;
+    z-index: 20;
+}
+
+#ConvergenceRoot {
+    width: 100%;
+    height: 100%;
+}
+
+.ConvergenceOffer {
+    width: 540px;
+    height: 510px;
+    padding: 20px 18px 14px 27px;
+    horizontal-align: left;
+    vertical-align: center;
+    margin-left: -23px;
+    margin-top: -90px;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26192ff5), color-stop(0.45, #18131ff5), to(#100d16f5));
+    border: 1px solid #a56dc9;
+    border-radius: 18px;
+    box-shadow: #000d 0px 12px 36px 0px;
+    opacity: 0;
+    transform: translate3d(-560px, 0px, 0px) scale3d(0.97, 0.97, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.2s;
+    transition-timing-function: ease-out;
+}
+
+.ConvergenceOffer.Visible {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+}
+
+.ConvergenceOffer.Upgrade {
+    border-color: #cf9c58;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#34251af5), color-stop(0.45, #211914f5), to(#120e0bf5));
+}
+
+.OfferTopAccent {
+    width: 220px;
+    height: 4px;
+    margin-left: 0px;
+    margin-top: -11px;
+    horizontal-align: left;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#d99cff), to(#6f438800));
+    box-shadow: #8e52ae55 0px 0px 7px 1px;
+}
+
+.ConvergenceOffer.Upgrade .OfferTopAccent {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#ffd38b), to(#8c571f00));
+    box-shadow: #d8974155 0px 0px 7px 1px;
+}
+
+.OfferCards {
+    width: 490px;
+    height: 458px;
+    flow-children: down;
+}
+
+.OfferCard {
+    width: 490px;
+    height: 146px;
+    margin-bottom: 10px;
+    padding: 10px 12px;
+    flow-children: right;
+    overflow: clip;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#33273ddd), to(#211a29dd));
+    border: 1px solid #53425f;
+    border-radius: 13px;
+    box-shadow: #0007 0px 4px 10px 0px;
+    transition-property: background-color, brightness, transform, border, box-shadow;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-out;
+}
+
+.OfferCard:last-child {
+    margin-bottom: 0;
+}
+
+.OfferCard:hover {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#473354ee), to(#292032ee));
+    border: 1px solid #8d65a5;
+    box-shadow: #8e52ae55 0px 4px 14px 0px;
+    brightness: 1.12;
+    transform: translate3d(3px, -2px, 0px);
+}
+
+.ConvergenceOffer.Upgrade .OfferCard {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#49331fdd), to(#291d13dd));
+    border-color: #715032;
+}
+
+.ConvergenceOffer.Upgrade .OfferCard:hover {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#5a4028ee), to(#342419ee));
+    border-color: #cf9454;
+    box-shadow: #d58c3f44 0px 4px 14px 0px;
+}
+
+.OfferCard:active {
+    transform: translate3d(2px, 1px, 0px) scale3d(0.97, 0.97, 1);
+}
+
+.ConvergenceOffer.Choosing .OfferCard {
+    saturation: 0.18;
+    brightness: 0.42;
+}
+
+.ConvergenceOffer.Choosing .OfferCard.Selected {
+    saturation: 1;
+    brightness: 1.5;
+    border: 1px solid #d99cff;
+    box-shadow: #a968c688 0px 3px 15px 1px;
+}
+
+.OfferAbilityImage {
+    width: 88px;
+    height: 72px;
+    min-width: 88px;
+    vertical-align: center;
+    border: 1px solid #725986;
+    border-radius: 9px;
+    box-shadow: #0008 0px 3px 8px 0px;
+}
+
+.OfferInfo {
+    width: 350px;
+    height: 114px;
+    margin-left: 14px;
+    flow-children: down;
+    vertical-align: center;
+}
+
+.OfferTitleRow {
+    width: 100%;
+    height: 28px;
+}
+
+.OfferName {
+    width: 280px;
+    height: 28px;
+    font-family: Reaver;
+    font-weight: semi-bold;
+    font-size: 22px;
+    letter-spacing: 0.5px;
+    color: #f7f0fa;
+    white-space: nowrap;
+    text-overflow: shrink;
+}
+
+.OfferDescription {
+    width: 350px;
+    height: 86px;
+    font-family: Radiance;
+    font-size: 15px;
+    color: #cfc5d3;
+    white-space: normal;
+    text-overflow: shrink;
+}
+
+.RankPips {
+    width: 57px;
+    height: 6px;
+    horizontal-align: right;
+    vertical-align: center;
+    flow-children: right;
+}
+
+.RankPip {
+    width: 17px;
+    height: 4px;
+    margin-right: 3px;
+    background-color: #120e17;
+    border: 1px solid #403348;
+    border-radius: 2px;
+}
+
+.RankPip:last-child {
+    margin-right: 0;
+}
+
+.RankPip.On {
+    background-color: #d99cff;
+    border-color: #edc8ff;
+    box-shadow: #a968c688 0px 0px 4px 1px;
+}
+
+.ConvergenceOffer.Upgrade .RankPip.On {
+    background-color: #ffbd69;
+    border-color: #ffd9a4;
+    box-shadow: #d98b3f77 0px 0px 4px 1px;
+}
+
+.OfferTimeoutTrack {
+    width: 490px;
+    height: 6px;
+    horizontal-align: left;
+    vertical-align: bottom;
+    margin-left: 0px;
+    margin-bottom: 0px;
+    background-color: #0f0c16;
+    border: 1px solid #5e466b;
+    border-radius: 3px;
+}
+
+.OfferTimeoutFill {
+    width: 100%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#8a55aa), to(#d99cff));
+    border-radius: 3px;
+    box-shadow: #8e52ae55 0px 0px 5px 1px;
+}
+
+.ConvergenceOffer.Upgrade .OfferTimeoutFill {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#a7622d), to(#ffbd69));
+    box-shadow: #d58c3f55 0px 0px 5px 1px;
+}
+

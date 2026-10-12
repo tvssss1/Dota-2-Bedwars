@@ -1,0 +1,330 @@
+.TeamScoreboardViewport,
+#TeamScoreboardRoot
+{
+    width: 100%;
+    height: 100%;
+}
+
+#TeamScoreboard
+{
+    horizontal-align: center;
+    vertical-align: top;
+    flow-children: right;
+    height: 68px;
+    margin-top: 2px;
+}
+
+/* BW_Duo only: red/green flank the timer and blue sits below it. */
+.DuoScoreboard .TeamCard.DuoCenterTeam
+{
+    horizontal-align: center;
+    y: 60px;
+}
+
+.DuoScoreboard .TeamCard
+{
+    width: 174px;
+}
+
+.TeamGroup
+{
+    flow-children: right;
+    height: 64px;
+}
+
+#TimerClearance
+{
+    width: 112px;
+    height: 54px;
+}
+
+.TeamCard
+{
+    width: 124px;
+    height: 54px;
+    margin: 0px 3px;
+    padding: 5px 6px 5px 6px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#29323deb), color-stop(0.48, #1b232ceb), to(#111820f5));
+    border: 2px solid #75808b88;
+    border-radius: 9px;
+    box-shadow: inset #ffffff0b 0px 1px 0px 0px, fill #00000099 0px 3px 7px 0px;
+    overflow: clip;
+}
+
+.TeamRed { border-color: #dc4a54cc; box-shadow: inset #e64b4b20 0px 0px 10px 0px, fill #00000099 0px 3px 7px 0px; }
+.TeamBlue { border-color: #4389e6cc; box-shadow: inset #4389e620 0px 0px 10px 0px, fill #00000099 0px 3px 7px 0px; }
+.TeamGreen { border-color: #49aa5acc; box-shadow: inset #49aa5a20 0px 0px 10px 0px, fill #00000099 0px 3px 7px 0px; }
+.TeamOrange { border-color: #e89635cc; box-shadow: inset #e8963520 0px 0px 10px 0px, fill #00000099 0px 3px 7px 0px; }
+
+.HeroFrame
+{
+    width: 44px;
+    height: 40px;
+    vertical-align: center;
+    horizontal-align: left;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#26313d), color-stop(0.48, #111820), to(#080c11));
+    border: 1px solid #c2ccd666;
+    border-radius: 6px;
+    overflow: clip;
+    box-shadow: inset #ffffff10 0px 1px 0px 0px, inset #000000cc 0px 0px 6px 1px;
+}
+
+.TeamHeroRoster
+{
+    width: 44px;
+    height: 40px;
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: right;
+}
+
+.DuoScoreboard .TeamHeroRoster
+{
+    width: 92px;
+}
+
+.TeamHeroRoster .HeroFrame
+{
+    margin-left: 1px;
+    margin-right: 1px;
+}
+
+.DuoHeroFrame
+{
+    visibility: collapse;
+}
+
+.DuoScoreboard .DuoHeroFrame
+{
+    visibility: visible;
+}
+
+.TeamRed .HeroFrame
+{
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#382229), to(#0b1016));
+    border-color: #c8505a88;
+    box-shadow: inset #ffadb514 0px 1px 3px 0px, inset #000000aa 0px 0px 4px 0px;
+}
+
+.TeamBlue .HeroFrame
+{
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#1c3048), to(#0b1016));
+    border-color: #4d8bcf88;
+    box-shadow: inset #b0d7ff14 0px 1px 3px 0px, inset #000000aa 0px 0px 4px 0px;
+}
+
+.TeamGreen .HeroFrame
+{
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#203827), to(#0b1016));
+    border-color: #54a96388;
+    box-shadow: inset #b8ffc314 0px 1px 3px 0px, inset #000000aa 0px 0px 4px 0px;
+}
+
+.TeamOrange .HeroFrame
+{
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#402d1d), to(#0b1016));
+    border-color: #cf873e88;
+    box-shadow: inset #ffe0ad14 0px 1px 3px 0px, inset #000000aa 0px 0px 4px 0px;
+}
+
+.HeroIcon
+{
+    width: 40px;
+    height: 36px;
+    horizontal-align: center;
+    vertical-align: center;
+    border-radius: 4px;
+    box-shadow: inset #ffffff18 0px 1px 0px 0px, fill #00000088 0px 1px 3px 0px;
+}
+
+.HeroFrame.EmptySlot .HeroIcon
+{
+    visibility: collapse;
+}
+
+.EmptyHero
+{
+    visibility: collapse;
+    width: 100%;
+    height: 32px;
+    text-align: center;
+    vertical-align: center;
+    padding-top: 4px;
+    color: #929da8;
+    font-size: 22px;
+    font-weight: bold;
+    text-shadow: 0px 1px 2px 2 #000000aa;
+}
+
+.HeroFrame.EmptySlot .EmptyHero
+{
+    visibility: visible;
+}
+
+.RespawnTime
+{
+    visibility: collapse;
+    width: 100%;
+    height: 100%;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    padding-top: 8px;
+    color: #fff1e8;
+    font-size: 21px;
+    font-weight: bold;
+    background-color: #080b10bb;
+    text-shadow: 0px 1px 3px 3 #000000;
+}
+
+.HeroFrame.HeroDead .HeroIcon
+{
+    saturation: 0;
+    wash-color: #777777;
+}
+
+.HeroFrame.HeroDead .RespawnTime
+{
+    visibility: visible;
+}
+
+.KillBadge
+{
+    width: 27px;
+    height: 31px;
+    vertical-align: center;
+    horizontal-align: right;
+    margin-right: 0px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#303a45e8), color-stop(0.48, #1b232ce8), to(#0d1319ee));
+    border: 1px solid #9da8b344;
+    border-radius: 8px;
+    box-shadow: inset #ffffff0d 0px 1px 0px 0px, fill #00000077 0px 2px 3px 0px;
+}
+
+.KillCount
+{
+    width: 100%;
+    height: 24px;
+    horizontal-align: center;
+    vertical-align: center;
+    text-align: center;
+    padding-top: 2px;
+    color: #f7f9fb;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0px;
+    text-shadow: 0px 1px 2px 2 #000000dd;
+}
+
+.TeamRed .KillBadge { border-color: #d95a6488; }
+.TeamBlue .KillBadge { border-color: #5798df88; }
+.TeamGreen .KillBadge { border-color: #5ab26988; }
+.TeamOrange .KillBadge { border-color: #df954b88; }
+.TeamRed .KillCount { color: #ffd9dc; }
+.TeamBlue .KillCount { color: #d8eaff; }
+.TeamGreen .KillCount { color: #dcffe2; }
+.TeamOrange .KillCount { color: #ffe7cb; }
+
+.BedState
+{
+    width: 29px;
+    height: 32px;
+    vertical-align: center;
+    horizontal-align: left;
+    margin-left: 0px;
+    border-radius: 7px;
+    background-color: #080c11aa;
+    border: 1px solid #aab3bd33;
+    overflow: clip;
+}
+
+.BedIcon
+{
+    width: 28px;
+    height: 28px;
+    vertical-align: center;
+    horizontal-align: center;
+}
+
+.TeamBlue .BedIcon,
+.TeamGreen .BedIcon,
+.TeamOrange .BedIcon
+{
+    pre-transform-scale2d: -1, 1;
+}
+
+.TeamGreen .KillBadge,
+.TeamOrange .KillBadge
+{
+    horizontal-align: left;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.TeamGreen .BedState,
+.TeamOrange .BedState
+{
+    horizontal-align: right;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.BedDestroyed
+{
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    vertical-align: center;
+    color: #ff3535;
+    font-size: 31px;
+    font-weight: bold;
+    text-shadow: 0px 0px 3px 3 #000000;
+}
+
+.BedState.Dead .BedIcon
+{
+    saturation: 0;
+    wash-color: #555555;
+    opacity: 0.55;
+}
+
+.BedState.Dead .BedDestroyed
+{
+    opacity: 1;
+}
+
+.AspectRatio4x3 .TeamCard,
+.AspectRatio5x4 .TeamCard
+{
+    width: 112px;
+    padding-left: 3px;
+    padding-right: 3px;
+}
+
+.AspectRatio4x3 .DuoScoreboard .TeamCard,
+.AspectRatio5x4 .DuoScoreboard .TeamCard
+{
+    width: 156px;
+}
+
+.AspectRatio4x3 .HeroFrame,
+.AspectRatio5x4 .HeroFrame
+{
+    width: 40px;
+    height: 34px;
+}
+
+.AspectRatio4x3 .HeroIcon,
+.AspectRatio5x4 .HeroIcon
+{
+    width: 36px;
+    height: 30px;
+}
+
+.AspectRatio4x3 #TimerClearance,
+.AspectRatio5x4 #TimerClearance
+{
+    width: 96px;
+}
+

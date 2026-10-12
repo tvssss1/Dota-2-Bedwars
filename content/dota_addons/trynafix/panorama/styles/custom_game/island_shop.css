@@ -1,0 +1,28 @@
+.IslandViewport { width:100%; height:100%; }
+.IslandResourcePrecache { visibility:collapse; width:0px; height:0px; }
+#IslandShopModal { width:100%; height:100%; background-color:#100803b8; opacity:1; transition-property:opacity; transition-duration:.18s; }
+#IslandShopModal.Hidden { opacity:0; }
+#IslandShopWindow { width:780px; height:850px; padding:22px; align:center center; flow-children:down; background-color:gradient(linear,0% 0%,100% 100%,from(#442006f5),color-stop(.5,#241307f5),to(#120b05f5)); border:1px solid #ed852c; border-radius:18px; box-shadow:#000d 0px 12px 36px 0px; }
+.IslandHeader { width:100%; height:58px; }
+.IslandTitle { vertical-align:center; font-family:Reaver; font-weight:bold; font-size:36px; letter-spacing:2px; color:#ffd29a; text-transform:uppercase; }
+.IslandClose { width:44px; height:44px; horizontal-align:right; vertical-align:center; background-color:#8c3d11cc; border:1px solid #f09a49; border-radius:22px; }
+.IslandClose Label { align:center center; font-size:30px; color:white; }
+.IslandStatus { width:100%; height:48px; margin:2px 0px 10px; padding:0px 12px; flow-children:right; background-color:#1e1008c0; border:1px solid #80451e; border-radius:9px; }
+#IslandContext { width:470px; vertical-align:center; font-size:17px; color:#ffe5c3; }
+#IslandBalance { width:220px; vertical-align:center; text-align:right; font-size:20px; font-weight:semi-bold; color:#ffad42; }
+#IslandCatalog { width:100%; height:630px; padding:2px 6px 2px 2px; flow-children:down; overflow:squish scroll; }
+.IslandEntry { width:100%; height:116px; min-height:116px; margin-bottom:8px; padding:10px 12px; flow-children:right; background-color:gradient(linear,0% 0%,100% 0%,from(#4b2813dd),to(#25150bdd)); border:1px solid #80502d; border-radius:13px; }
+.IslandEntry:hover { brightness:1.15; border:1px solid #e58a38; transform:translateX(4px); }
+.IslandEntry.Locked { saturation:.15; opacity:.58; }
+.IslandEntry.Locked:hover { brightness:1; border:1px solid #80502d; transform:none; }
+.IslandIcon { width:88px; height:72px; min-width:88px; margin-top:12px; border:1px solid #9c632e; border-radius:9px; }
+.IslandInfo { width:450px; height:72px; margin-left:14px; flow-children:down; vertical-align:center; }
+.IslandName { height:28px; font-family:Reaver; font-weight:semi-bold; font-size:22px; color:#fff1df; }
+.IslandDesc { width:440px; height:40px; font-size:15px; color:#d8c2a7; white-space:normal; text-overflow:shrink; }
+.IslandBuy { width:135px; height:48px; vertical-align:center; background-color:gradient(linear,0% 0%,0% 100%,from(#e47721),to(#873508)); border:1px solid #ffb05c; border-radius:9px; }
+.IslandBuy:hover { brightness:1.35; transform:translateY(-2px); }
+.IslandBuy:disabled { saturation:0; opacity:.42; }
+.IslandBuy Label { align:center center; font-family:Reaver; font-weight:semi-bold; font-size:18px; color:white; }
+.IslandLocked { width:135px; height:48px; vertical-align:center; text-align:center; padding-top:12px; font-family:Reaver; font-weight:semi-bold; font-size:17px; color:#c8b7a4; border:1px solid #665448; border-radius:9px; }
+#IslandResult { width:100%; height:38px; margin-top:3px; font-size:19px; font-weight:semi-bold; color:#ff8888; text-align:center; }
+#IslandResult.Success { color:#8ef09d; }

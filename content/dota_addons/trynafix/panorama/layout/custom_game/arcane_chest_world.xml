@@ -1,0 +1,7 @@
+<root>
+  <styles><include src="file://{resources}/styles/custom_game/arcane_chest_world.css" /></styles>
+  <scripts><include src="file://{resources}/scripts/custom_game/arcane_chest_world.js" /></scripts>
+  <Panel class="ArcaneChestWorldViewport" hittest="false" hittestchildren="false">
+    <Panel id="ArcaneChestWorldRoot" hittest="false" hittestchildren="false" />
+  </Panel>
+</root>

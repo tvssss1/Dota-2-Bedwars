@@ -1,0 +1,306 @@
+"DOTAAbilities"
+{
+	"item_void_stone"
+	{
+		"SecretShop"					"0"
+	}
+    "item_talisman_of_evasion"
+    {
+        "SecretShop"					"0"
+    }
+    "item_platemail"
+    {
+        "SecretShop"					"0"
+    }
+    "item_ring_of_tarrasque"
+    {
+        "SecretShop"					"0"
+    }
+    "item_tiara_of_selemene"
+    {
+        "SecretShop"					"0"
+    }
+    "item_hyperstone"
+    {
+        "SecretShop"					"0"
+    }
+    "item_demon_edge"
+    {
+        "SecretShop"					"0"
+    }
+    "item_vitality_booster"
+    {
+        "SecretShop"					"0"
+    }
+    "item_energy_booster"
+    {
+        "SecretShop"					"0"
+    }
+    "item_point_booster"
+    {
+        "SecretShop"					"0"
+    }
+    "item_relic"
+    {
+        "SecretShop"					"0"
+    }
+    "item_reaver"
+    {
+        "SecretShop"					"0"
+    }
+    "item_eagle"
+    {
+        "SecretShop"					"0"
+    }
+    "item_mystic_staff"
+    {
+        "SecretShop"					"0"
+    }
+    "item_ultimate_orb"
+    {
+        "SecretShop"					"0"
+    }
+	"item_ring_of_health"
+	{
+		"SecretShop"					"0"
+	}
+    "item_tpscroll"
+    {
+        "ItemPurchasable"           "0"
+    }
+    "item_custom_tp"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+		"Model"						"models/props_gameplay/tpscroll01.vmdl"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+        "AbilityTextureName"        "item_tpscroll"
+        "AbilityCooldown"           "80"
+        "AbilityManaCost"           "0"
+        "ScriptFile"                "items/item_custom_tp.lua"
+        "AbilityChannelTime"          "3"
+        "ItemStackable"             "1"
+        "ItemInitialCharges"        "1"
+        "ItemPermanent"             "0"
+    }
+    "item_purple_money"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+		"ItemSellable"             "0"
+        "Model"                     "models/props_gameplay/rune_arcane.vmdl"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityTextureName"        "purple_money"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "ScriptFile"                "items/item_purple_money_custom.lua"
+        "ItemStackable"					"1"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemDropOnDeath"				"1"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"4"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"135.0"       
+    }
+    "item_pumpkin_coin"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+		"ItemSellable"             "0"
+        "Model"                     "models/props_gameplay/pumpkin_rune.vmdl"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "ScriptFile"                "items/item_pumpkin_coin.lua"
+        "AbilityTextureName"        "pumpkin_coin"
+        "ItemStackable"             "1"
+        "ItemShareability"          "ITEM_FULLY_SHAREABLE"
+        "ItemPermanent"             "0"
+        "ItemDropOnDeath"           "1"
+        "ItemInitialCharges"        "1"
+    }
+    "item_custom_tower"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityTextureName"        "tower_png"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "AbilityCastRange"          "300"
+        "ScriptFile"                "items/item_custom_tower.lua"
+        "ItemStackable"					"1"
+		"ItemPermanent"					"1"
+		"ItemInitialCharges"			"1"
+		"ItemStockMax"					"4"
+		"ItemStockInitial"				"2"
+		"ItemStockTime"					"135.0"       
+    }
+    "item_bed_raiders"
+    {
+        "BaseClass" "item_lua"
+        "ItemPurchasable" "0"
+        "AbilityTextureName"        "bed_raiders"
+        "AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam" "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType" "DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_OTHER"
+        "AbilityUnitTargetFlags" "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityCooldown" "0"
+        "AbilityManaCost" "0"
+        "AbilityCastRange" "25000"
+        "ScriptFile" "items/item_bed_raiders.lua"
+        "ItemStackable" "1"
+        "ItemPermanent" "0"
+        "ItemInitialCharges" "1"
+    }
+    "item_durian_pearl"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+        "ScriptFile"                "items/durian_pearl.lua"
+
+        "Model"                     "models/items/witchdoctor/wd_ti8_immortal_bonkers/wd_ti8_immortal_durian.vmdl"
+        "AbilityTextureName"        "ender_pearl"
+
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_NONE"
+
+        "AbilityCastRange"          "2500"
+        "AbilityCooldown"           "25"
+        "AbilityManaCost"           "40"
+
+        "ItemCost"                  "0"
+        "ItemStackable"             "1"
+        "ItemPermanent"             "0"
+        "ItemShareability"          "ITEM_NOT_SHAREABLE"
+
+        "ItemInitialCharges"        "1"
+
+        "ItemStockMax"              "4"
+        "ItemStockInitial"          "2"
+        "ItemStockTime"             "135"
+        "AbilitySpecial"
+        {
+            "01" { "var_type" "FIELD_INTEGER" "projectile_speed" "1200" }
+            "02" { "var_type" "FIELD_INTEGER" "bonus_agility" "6" }
+            "03" { "var_type" "FIELD_INTEGER" "bonus_movement_speed" "12" }
+        }
+    }
+    "item_harvest_tonic"
+    {
+        "BaseClass"                 "item_lua"
+		"ItemPurchasable"           "0"
+        "ScriptFile"                "items/item_harvest_tonic.lua"
+        "AbilityTextureName"        "harvest_tonic"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "ItemCost"                  "0"
+        "ItemStackable"             "1"
+        "ItemPermanent"             "0"
+        "ItemShareability"          "ITEM_NOT_SHAREABLE"
+        "ItemInitialCharges"        "1"
+        "AbilitySpecial"
+        {
+            "01" { "var_type" "FIELD_INTEGER" "heal_amount" "300" }
+            "02" { "var_type" "FIELD_FLOAT" "duration" "8.0" }
+            "03" { "var_type" "FIELD_INTEGER" "active_move_speed_pct" "30" }
+            "04" { "var_type" "FIELD_INTEGER" "active_attack_speed" "60" }
+            "05" { "var_type" "FIELD_INTEGER" "active_lifesteal_pct" "20" }
+            "06" { "var_type" "FIELD_INTEGER" "takedown_heal" "250" }
+            "07" { "var_type" "FIELD_FLOAT" "takedown_extension" "3.0" }
+            "08" { "var_type" "FIELD_FLOAT" "max_duration" "14.0" }
+            "09" { "var_type" "FIELD_INTEGER" "bonus_strength" "6" }
+            "10" { "var_type" "FIELD_FLOAT" "bonus_health_regen" "2.0" }
+        }
+    }
+    "item_skyhook_spool"
+    {
+        "BaseClass"                 "item_lua"
+        "ItemPurchasable"           "0"
+        "ScriptFile"                "items/item_skyhook_spool.lua"
+        "AbilityTextureName"        "skyhook_spool"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+        "AbilityUnitTargetTeam"     "DOTA_UNIT_TARGET_TEAM_BOTH"
+        "AbilityUnitTargetType"     "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC | DOTA_UNIT_TARGET_BUILDING | DOTA_UNIT_TARGET_TREE"
+        "AbilityUnitTargetFlags"    "DOTA_UNIT_TARGET_FLAG_INVULNERABLE | DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+        "AbilityCastRange"          "1100"
+        "AbilityCooldown"           "25"
+        "AbilityManaCost"           "0"
+        "ItemCost"                  "0"
+        "ItemStackable"             "0"
+        "ItemPermanent"             "1"
+        "ItemShareability"          "ITEM_NOT_SHAREABLE"
+        "AbilitySpecial"
+        {
+            "01" { "var_type" "FIELD_INTEGER" "hook_range" "1100" }
+            "02" { "var_type" "FIELD_INTEGER" "hook_speed" "1600" }
+            "03" { "var_type" "FIELD_INTEGER" "hook_width" "120" }
+            "04" { "var_type" "FIELD_FLOAT" "reel_duration" "0.55" }
+            "05" { "var_type" "FIELD_INTEGER" "meeting_point_pct" "70" }
+            "06" { "var_type" "FIELD_FLOAT" "enemy_burn_duration" "6.0" }
+            "07" { "var_type" "FIELD_INTEGER" "enemy_burn_dps" "60" }
+            "08" { "var_type" "FIELD_INTEGER" "enemy_burn_slow_pct" "30" }
+            "09" { "var_type" "FIELD_FLOAT" "ally_aura_duration" "8.0" }
+            "10" { "var_type" "FIELD_INTEGER" "ally_aura_radius" "350" }
+            "11" { "var_type" "FIELD_INTEGER" "ally_aura_dps" "45" }
+            "12" { "var_type" "FIELD_INTEGER" "ally_aura_slow_pct" "25" }
+            "13" { "var_type" "FIELD_INTEGER" "ally_magic_resistance" "15" }
+            "14" { "var_type" "FIELD_INTEGER" "bonus_damage" "12" }
+            "15" { "var_type" "FIELD_INTEGER" "bonus_armor" "4" }
+        }
+    }
+    "item_gravity_marble"
+    {
+        "BaseClass"                 "item_lua"
+        "ItemPurchasable"           "0"
+        "ScriptFile"                "items/item_gravity_marble.lua"
+        "AbilityTextureName"        "gravity_marble"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityCastRange"          "900"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "ItemCost"                  "0"
+        "ItemStackable"             "1"
+        "ItemPermanent"             "0"
+        "ItemShareability"          "ITEM_NOT_SHAREABLE"
+        "ItemInitialCharges"        "1"
+        "AbilitySpecial"
+        {
+            "01" { "var_type" "FIELD_INTEGER" "cast_range" "900" }
+            "02" { "var_type" "FIELD_INTEGER" "radius" "425" }
+            "03" { "var_type" "FIELD_FLOAT" "delay" "0.45" }
+            "04" { "var_type" "FIELD_FLOAT" "pull_duration" "0.35" }
+            "05" { "var_type" "FIELD_FLOAT" "root_duration" "1.25" }
+            "06" { "var_type" "FIELD_INTEGER" "bonus_intellect" "6" }
+            "07" { "var_type" "FIELD_FLOAT" "bonus_mana_regen" "1.5" }
+        }
+    }
+    "item_overdrive_grenade"
+    {
+        "BaseClass"                 "item_lua"
+        "ItemPurchasable"           "0"
+        "ScriptFile"                "items/item_overdrive_grenade.lua"
+        "AbilityTextureName"        "overdrive_grenade"
+        "AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_POINT"
+        "AbilityCastRange"          "900"
+        "AbilityCooldown"           "0"
+        "AbilityManaCost"           "0"
+        "ItemCost"                  "0"
+        "ItemStackable"             "1"
+        "ItemPermanent"             "0"
+        "ItemShareability"          "ITEM_NOT_SHAREABLE"
+        "ItemInitialCharges"        "1"
+        "AbilitySpecial"
+        {
+            "01" { "var_type" "FIELD_INTEGER" "cast_range" "900" }
+            "02" { "var_type" "FIELD_INTEGER" "radius" "325" }
+            "03" { "var_type" "FIELD_INTEGER" "projectile_speed" "1200" }
+            "04" { "var_type" "FIELD_FLOAT" "fuse_duration" "0.55" }
+            "05" { "var_type" "FIELD_INTEGER" "knockback_distance" "1400" }
+            "06" { "var_type" "FIELD_INTEGER" "knockback_height" "200" }
+            "07" { "var_type" "FIELD_FLOAT" "knockback_duration" "1.0" }
+        }
+    }
+}

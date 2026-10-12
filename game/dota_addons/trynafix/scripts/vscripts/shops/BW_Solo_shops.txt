@@ -1,0 +1,183 @@
+"BW_Solo_shops"
+{
+	"consumables"
+	{
+		"item"		"item_custom_tp"
+		"item"		"item_faerie_fire"				
+		"item"		"item_ward_observer"
+		"item"		"item_ward_sentry"
+		"item"		"item_enchanted_mango"
+		"item"		"item_tome_of_knowledge"
+		"item"		"item_bottle"
+		"item"		"item_aghanims_shard"
+	}
+
+	"attributes"
+	{
+		"item"		"item_branches"
+		"item"		"item_gauntlets"
+		"item"		"item_slippers"
+		"item"		"item_mantle"	
+		"item"		"item_belt_of_strength"
+		"item"		"item_boots_of_elves"
+		"item"		"item_robe"
+		"item"		"item_crown"
+		"item"		"item_ogre_axe"
+		"item"		"item_blade_of_alacrity"
+		"item" 		"item_staff_of_wizardry"
+	}
+
+	"weapons_armor"
+	{
+		"item"		"item_quelling_blade"
+		"item"		"item_ring_of_protection"
+		"item"		"item_infused_raindrop"	
+		"item"		"item_orb_of_venom"
+		"item"		"item_blades_of_attack"
+		"item"		"item_gloves"
+		"item"		"item_chainmail"
+		"item"		"item_quarterstaff"
+		"item"		"item_helm_of_iron_will"
+		"item"		"item_broadsword"
+		"item"		"item_blitz_knuckles"
+		"item"		"item_claymore"				
+		"item" 		"item_mithril_hammer"
+	}
+			
+	"misc"
+	{		
+		"item"		"item_ring_of_regen"
+		"item"		"item_sobi_mask"
+		"item"		"item_fluffy_hat"
+		"item"		"item_wind_lace"
+		"item"		"item_cloak"
+		"item"		"item_boots"
+		"item"		"item_voodoo_mask"
+		"item"		"item_shadow_amulet"	
+	}
+	
+	"basics"
+	{
+		"item"		"item_null_talisman"
+		"item"		"item_wraith_band"
+		"item"		"item_bracer"
+		"item"		"item_soul_ring"
+		"item"		"item_orb_of_corrosion"
+		"item"		"item_falcon_blade"
+		"item"		"item_power_treads"
+		"item"		"item_phase_boots"
+		"item"		"item_oblivion_staff"
+		"item"		"item_pers"
+		"item"		"item_helm_of_the_dominator"	
+		"item"		"item_travel_boots"
+	}
+
+	"support"
+	{
+		"item"		"item_buckler"
+		"item"		"item_ring_of_basilius"
+		"item"		"item_headdress"
+		"item"		"item_tranquil_boots"
+		"item"		"item_medallion_of_courage"
+		"item"		"item_holy_locket"
+	}
+				
+	"magics"			
+	{		
+		"item"		"item_glimmer_cape"
+		"item"		"item_witch_blade"
+		"item"		"item_cyclone"
+		"item"		"item_dagon"
+		"item"		"item_solar_crest"
+		"item"		"item_ultimate_scepter"
+		"item"		"item_refresher"
+		"item"		"item_wind_waker"
+	}
+		
+	"defense"
+	{
+		"item"		"item_soul_booster"
+		"item"		"item_eternal_shroud"
+		"item"		"item_sphere"
+	}
+	
+	"weapons"
+	{
+		"item"		"item_bfury"
+	}
+	
+	"artifacts"
+	{		
+		"item"		"item_dragon_lance"
+		"item"		"item_mage_slayer"
+		"item"		"item_overwhelming_blink"		
+		"item"		"item_swift_blink"		
+		"item"		"item_arcane_blink"	
+	}
+
+	"sideshop1"
+	{		
+		"item"		"item_ring_of_protection"
+		"item"		"item_quelling_blade"
+		"item"		"item_boots"
+		"item"		"item_boots_of_elves"
+		"item"		"item_belt_of_strength"
+		"item"		"item_robe"
+		"item" 		"item_crown"
+	}
+
+	"sideshop2"
+	{
+		"item"		"item_gloves"
+		"item"		"item_chainmail"
+		"item"		"item_cloak"
+		"item"		"item_void_stone"
+		"item"		"item_helm_of_iron_will"
+		"item"		"item_energy_booster"
+		"item"		"item_vitality_booster"
+		"item"		"item_broadsword"
+	}
+	
+	"secretshop"
+	{
+		"item"		"item_ring_of_health"
+		"item"		"item_void_stone"
+		"item"		"item_energy_booster"
+		"item"		"item_vitality_booster"
+		"item"		"item_point_booster"
+		"item"		"item_platemail"
+		"item"		"item_talisman_of_evasion"
+		"item"		"item_hyperstone"
+		"item"		"item_ultimate_orb"
+		"item"		"item_demon_edge"
+		"item"		"item_mystic_staff"
+		"item"		"item_reaver"
+		"item"		"item_eagle"
+		"item" 		"item_relic"
+	}
+
+	"pregame"
+	{
+		"item"		"item_faerie_fire"
+		"item"		"item_enchanted_mango"
+		"item"		"item_ward_observer"
+		"item"		"item_ward_sentry"
+		"item"		"item_branches"
+		"item"		"item_gauntlets"
+		"item"		"item_slippers"
+		"item"		"item_mantle"
+		"item"		"item_ring_of_protection"
+		"item"		"item_quelling_blade"
+		"item"		"item_orb_of_venom"
+		"item"		"item_wind_lace"
+		"item"		"item_sobi_mask"
+		"item"		"item_ring_of_regen"
+		"item"		"item_boots"
+		"item"		"item_gloves"
+		"item"		"item_crown"
+		"item"		"item_wraith_band"
+		"item"		"item_null_talisman"
+		"item"		"item_bracer"
+		"item" 		"item_blades_of_attack"
+	}
+}

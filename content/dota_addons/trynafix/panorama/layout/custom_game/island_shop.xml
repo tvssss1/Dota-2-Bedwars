@@ -1,0 +1,29 @@
+<root>
+  <styles><include src="file://{resources}/styles/custom_game/island_shop.css" /></styles>
+  <scripts><include src="file://{resources}/scripts/custom_game/island_shop.js" /></scripts>
+  <Panel class="IslandViewport" hittest="false" hittestchildren="true">
+    <Image class="IslandResourcePrecache" src="file://{images}/items/ender_pearl.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/pumpkin_bomb.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/harvest_tonic.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/overdrive_grenade.png" />
+    <!-- Keep dynamic catalog and inventory icons in Panorama's native UI texture pipeline. -->
+    <Image class="IslandResourcePrecache" src="file://{images}/items/skyhook_spool.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/gravity_marble.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/item_skyhook_spool.png" />
+    <Image class="IslandResourcePrecache" src="file://{images}/items/item_gravity_marble.png" />
+    <Panel id="IslandShopModal" class="Hidden" hittest="false" hittestchildren="false" acceptsfocus="true" oncancel="IslandShop.Close()">
+      <Panel id="IslandShopWindow">
+        <Panel class="IslandHeader">
+          <Label class="IslandTitle" text="#island_shop_title" />
+          <Button id="IslandShopClose" class="IslandClose" onactivate="IslandShop.Toggle()"><Label text="×" /></Button>
+        </Panel>
+        <Panel class="IslandStatus">
+          <Label id="IslandContext" text="#island_shop_checking" />
+          <Label id="IslandBalance" text="" />
+        </Panel>
+        <Panel id="IslandCatalog" flow-children="down" />
+        <Label id="IslandResult" text="" />
+      </Panel>
+    </Panel>
+  </Panel>
+</root>

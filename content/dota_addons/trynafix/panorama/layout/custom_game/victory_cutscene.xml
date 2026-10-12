@@ -1,0 +1,29 @@
+<root>
+    <styles><include src="file://{resources}/styles/custom_game/victory_cutscene.css" /></styles>
+    <scripts><include src="file://{resources}/scripts/custom_game/victory_cutscene.js" /></scripts>
+    <Panel class="VictoryScene" hittest="false">
+        <Panel class="VictoryVignette" />
+        <Panel class="VictoryRays" />
+        <Panel class="VictoryLetterbox VictoryLetterboxTop" />
+        <Panel class="VictoryLetterbox VictoryLetterboxBottom" />
+        <Panel id="VictoryFlash" class="VictoryFlash" />
+        <Panel id="VictoryCard" class="VictoryCard">
+            <Panel class="VictoryCardGlow" />
+            <Panel class="VictoryAccent VictoryAccentLeft" />
+            <Panel class="VictoryAccent VictoryAccentRight" />
+            <Panel class="VictoryContent" flow-children="right">
+                <Panel class="VictoryPortraitFrame">
+                    <DOTAHeroImage id="VictoryPortrait" class="VictoryPortrait" heroname="npc_dota_hero_axe" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect" />
+                    <Panel class="VictoryPortraitShade" />
+                </Panel>
+                <Panel class="VictoryCopy" flow-children="down">
+                    <Label id="VictoryKicker" class="VictoryKicker" text="#trynafix_victory_kicker" />
+                    <Label id="VictoryTeam" class="VictoryTeam" text="" />
+                    <Panel class="VictoryRule"><Panel class="VictoryRuleCore" /></Panel>
+                    <Label id="VictoryHero" class="VictoryHero" text="" />
+                    <Label id="VictoryPlayer" class="VictoryPlayer" text="" />
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

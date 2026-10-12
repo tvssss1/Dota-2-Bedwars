@@ -1,0 +1,560 @@
+.StrategyOverlayRoot {
+    width: 100%;
+    height: 100%;
+    z-index: 10000;
+    overflow: clip;
+    font-family: Reaver;
+    background-color: #06090d;
+}
+
+.StrategyBackdrop {
+    width: 100%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#16090f), color-stop(0.48, #0d080c), to(#050507));
+}
+
+.StrategyBackdropGlow {
+    width: 100%;
+    height: 100%;
+    opacity: 0.42;
+    background-color: gradient(radial, 50% 34%, 0% 0%, 72% 72%, from(#7b293d66), color-stop(0.42, #38121d22), to(#00000000));
+}
+
+.StrategySlash {
+    width: 420px;
+    height: 1500px;
+    y: -190px;
+    transform: rotateZ(-42deg);
+    opacity: 0.24;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#5f1729), to(#18070d));
+}
+
+.StrategySlashOne { x: -120px; }
+.StrategySlashTwo { x: 410px; }
+.StrategySlashThree { x: 940px; }
+.StrategySlashFour { x: 1470px; }
+
+.StrategySystemButtons {
+    width: 104px;
+    height: 48px;
+    margin: 12px 0px 0px 15px;
+    flow-children: right;
+}
+
+.StrategySystemButton {
+    width: 42px;
+    height: 42px;
+    margin-right: 8px;
+    border-radius: 4px;
+    background-color: #10171dcc;
+    border: 1px solid #3e4b55;
+    transition-property: brightness, background-color;
+    transition-duration: 0.12s;
+}
+
+.StrategySystemButton:hover {
+    brightness: 1.8;
+    background-color: #26323d;
+}
+
+.StrategySystemIcon {
+    width: 25px;
+    height: 25px;
+    align: center center;
+    background-size: 25px 25px;
+    background-repeat: no-repeat;
+    wash-color: #8e9ba5;
+}
+
+.StrategyDashboardGlyph { background-image: url("s2r://panorama/images/control_icons/quit_png.vtex"); }
+.StrategySettingsGlyph { background-image: url("s2r://panorama/images/control_icons/gear_png.vtex"); }
+
+.StrategyTeamBar {
+    width: 1260px;
+    height: 92px;
+    margin-top: 5px;
+    horizontal-align: center;
+    flow-children: right;
+}
+
+.StrategyTeam {
+    width: 278px;
+    height: 76px;
+    margin: 7px 4px 0px 4px;
+    flow-children: right;
+    overflow: clip;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#26323df5), to(#11171df5));
+    border: 1px solid #52606c;
+    border-radius: 4px;
+    box-shadow: #000d 0px 4px 12px 0px;
+}
+
+.StrategyTeam.StrategyLocalTeam {
+    border: 2px solid #d3b76e;
+    box-shadow: #d6b65b55 0px 0px 12px 0px;
+}
+
+.StrategyTeamColor { width: 5px; height: 100%; }
+.StrategyTeamRed .StrategyTeamColor { background-color: #e45a60; }
+.StrategyTeamBlue .StrategyTeamColor { background-color: #58a8ef; }
+.StrategyTeamGreen .StrategyTeamColor { background-color: #62c378; }
+.StrategyTeamOrange .StrategyTeamColor { background-color: #ee9949; }
+
+.StrategyHeroFrame {
+    width: 104px;
+    height: 58px;
+    margin: 8px 8px 0px 8px;
+    background-color: #06090d;
+    border: 1px solid #58636c;
+    box-shadow: inset #000c 0px 0px 7px 0px;
+}
+
+.StrategyHeroPortrait { width: 100%; height: 100%; opacity: 0; saturation: 0.7; }
+.StrategyTeamHasHero .StrategyHeroPortrait { opacity: 1; saturation: 1; }
+
+.StrategyEmptyHero {
+    horizontal-align: center;
+    vertical-align: center;
+    color: #66717b;
+    font-size: 34px;
+    font-weight: bold;
+    text-shadow: 0px 2px 5px #000;
+}
+
+.StrategyTeamDetails {
+    width: 148px;
+    height: 66px;
+    margin-top: 6px;
+    flow-children: down;
+}
+
+.StrategyTeamName {
+    width: 100%;
+    height: 20px;
+    color: #f0e8d8;
+    font-size: 15px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.StrategyPlayer {
+    width: 100%;
+    height: 20px;
+    margin-top: 1px;
+    color: #aeb8c0;
+    font-family: Radiance;
+    font-size: 13px;
+    text-overflow: ellipsis;
+}
+
+.StrategyHeroName {
+    width: 100%;
+    height: 21px;
+    color: #77838d;
+    font-family: Radiance;
+    font-size: 12px;
+    font-weight: semi-bold;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+}
+
+.StrategyTeamHasHero .StrategyHeroName { color: #e5d6a9; }
+
+.StrategyTimer {
+    width: 96px;
+    height: 88px;
+    margin: 0px 3px;
+    flow-children: down;
+    background-color: gradient(radial, 50% 45%, 0% 0%, 70% 70%, from(#293641f5), to(#090d11f5));
+    border: 1px solid #7b858c;
+    border-radius: 0px 0px 7px 7px;
+    box-shadow: #000e 0px 5px 15px 0px;
+}
+
+.StrategyTimerCaption {
+    width: 100%;
+    height: 18px;
+    margin-top: 6px;
+    color: #9ca8b0;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.StrategyTimerValue {
+    width: 100%;
+    height: 48px;
+    color: #eee9dc;
+    font-size: 42px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 2px 8px #000;
+}
+
+.StrategyTimerValue.StrategyTimerUrgent { color: #ff7777; text-shadow: 0px 0px 10px #ff333388; }
+
+.StrategyTimerRule {
+    width: 56px;
+    height: 2px;
+    horizontal-align: center;
+    background-color: #b89c5d;
+    box-shadow: #d0ae5c66 0px 0px 5px 0px;
+}
+
+.StrategyMain {
+    width: 1720px;
+    height: 930px;
+    y: 105px;
+    horizontal-align: center;
+    flow-children: down;
+}
+
+.StrategyHeading { width: 100%; height: 94px; flow-children: down; }
+
+.StrategyEyebrow {
+    width: 100%;
+    height: 18px;
+    color: #a58c5c;
+    font-size: 13px;
+    letter-spacing: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.StrategyTitle {
+    width: 100%;
+    height: 48px;
+    color: #f1eee7;
+    font-size: 40px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    text-shadow: 0px 2px 8px #000;
+    text-transform: uppercase;
+}
+
+.StrategySubtitle {
+    width: 100%;
+    height: 25px;
+    color: #aeb8c0;
+    font-family: Radiance;
+    font-size: 16px;
+    text-align: center;
+}
+
+.StrategyContent {
+    width: 100%;
+    height: 806px;
+    flow-children: right;
+}
+
+.StrategyLocalHeroCard,
+.StrategyShopPanel,
+.StrategyInventoryPanel {
+    height: 780px;
+    margin: 0px 6px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#182129f2), to(#090c10f2));
+    border: 1px solid #43515b;
+    border-radius: 6px;
+    box-shadow: #000c 0px 5px 18px 0px;
+}
+
+.StrategyLocalHeroCard { width: 286px; flow-children: down; }
+.StrategyShopPanel { width: fill-parent-flow(1); flow-children: down; }
+.StrategyInventoryPanel { width: 292px; flow-children: down; }
+
+.StrategySectionTitle {
+    width: 100%;
+    height: 35px;
+    margin-top: 15px;
+    color: #e8e4da;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.StrategyLocalHeroImageFrame {
+    width: 242px;
+    height: 430px;
+    margin-top: 12px;
+    horizontal-align: center;
+    overflow: clip;
+    background-color: #05070a;
+    border: 2px solid #596773;
+    box-shadow: inset #000e 0px 0px 18px 0px;
+}
+
+.StrategyLocalHeroPortrait { width: 100%; height: 100%; }
+
+.StrategyLocalHeroEmpty {
+    align: center center;
+    color: #56626c;
+    font-size: 94px;
+    font-weight: bold;
+}
+
+.StrategyLocalHeroName {
+    width: 100%;
+    height: 42px;
+    margin-top: 18px;
+    color: #e5d6a9;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    text-overflow: shrink;
+    text-transform: uppercase;
+}
+
+.StrategyLocalPlayerName {
+    width: 100%;
+    height: 28px;
+    margin-top: 2px;
+    color: #9ca8b0;
+    font-family: Radiance;
+    font-size: 17px;
+    text-align: center;
+}
+
+.StrategyReadyBadge {
+    width: 170px;
+    height: 38px;
+    margin-top: 30px;
+    horizontal-align: center;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#244f34), to(#173523));
+    border: 1px solid #69b67c;
+    border-radius: 3px;
+    transition-property: brightness, box-shadow;
+    transition-duration: 0.12s;
+}
+
+.StrategyReadyBadge:hover { brightness: 1.35; box-shadow: #69b67c55 0px 0px 10px 0px; }
+.StrategyReadyBadge:active { brightness: 0.85; }
+
+.StrategyReadyBadge Label {
+    width: 100%;
+    height: 100%;
+    color: #bde7c7;
+    font-size: 17px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-align: center;
+    vertical-align: center;
+}
+
+.StrategyShopHeader { width: 100%; height: 82px; flow-children: right; border-bottom: 1px solid #3b4852; }
+.StrategyShopHeaderText { width: fill-parent-flow(1); height: 80px; flow-children: down; }
+.StrategyShopHeaderText .StrategySectionTitle { height: 31px; margin: 12px 0px 0px 18px; text-align: left; }
+
+.StrategyShopHint {
+    width: 100%;
+    height: 24px;
+    margin-left: 18px;
+    color: #8f9ca5;
+    font-family: Radiance;
+    font-size: 14px;
+}
+
+.StrategyGold {
+    width: 190px;
+    height: 54px;
+    margin: 13px 16px 0px 0px;
+    flow-children: right;
+    background-color: #080b0ed9;
+    border: 1px solid #665735;
+    border-radius: 4px;
+}
+
+.StrategyGoldIcon { width: 31px; margin: 10px 0px 0px 11px; color: #e9bb43; font-size: 20px; text-shadow: 0px 0px 6px #e7a93366; }
+.StrategyGoldValue { width: 88px; height: 48px; padding-top: 8px; color: #f0ca65; font-size: 25px; font-weight: bold; text-align: right; }
+.StrategyGoldCaption { width: 50px; height: 46px; padding: 18px 0px 0px 6px; color: #8f8060; font-size: 10px; letter-spacing: 1px; }
+
+.StrategyShopGrid {
+    width: 100%;
+    height: 648px;
+    padding: 10px 12px;
+    flow-children: right-wrap;
+    overflow: squish scroll;
+}
+
+.StrategyItemCard {
+    width: 142px;
+    height: 148px;
+    margin: 4px;
+    flow-children: down;
+    overflow: clip;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#202b34), to(#0d1318));
+    border: 1px solid #485661;
+    box-shadow: #000a 0px 3px 8px 0px;
+    transition-property: transform, brightness, border, box-shadow;
+    transition-duration: 0.1s;
+}
+
+.StrategyItemCard:hover {
+    z-index: 3;
+    transform: scale3d(1.045, 1.045, 1);
+    brightness: 1.2;
+    border: 1px solid #d2b76d;
+    box-shadow: #d2b76d44 0px 0px 9px 0px;
+}
+
+.StrategyItemCard:active { transform: scale3d(0.98, 0.98, 1); }
+.StrategyItemCard.StrategyItemUnaffordable { saturation: 0.25; brightness: 0.55; }
+.StrategyItemCard.StrategyItemPending { brightness: 0.72; }
+
+.StrategyItemIconFrame {
+    width: 104px;
+    height: 76px;
+    margin-top: 8px;
+    horizontal-align: center;
+    background-color: #030507;
+    border: 1px solid #59646c;
+}
+
+.StrategyItemIcon { width: 100%; height: 100%; }
+
+.StrategyItemName {
+    width: 132px;
+    height: 32px;
+    margin: 3px 5px 0px 5px;
+    color: #e5e8ea;
+    font-family: Radiance;
+    font-size: 12px;
+    font-weight: semi-bold;
+    text-align: center;
+    text-overflow: shrink;
+    text-transform: uppercase;
+}
+
+.StrategyItemBottom { width: 100%; height: 26px; flow-children: right; background-color: #070a0dd9; }
+
+.StrategyItemPrice {
+    width: fill-parent-flow(1);
+    height: 25px;
+    padding: 4px 0px 0px 12px;
+    color: #e5bd52;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.StrategyItemStock {
+    width: 54px;
+    height: 25px;
+    padding: 5px 9px 0px 0px;
+    color: #8f9aa2;
+    font-family: Radiance;
+    font-size: 12px;
+    text-align: right;
+}
+
+.StrategyShopStatus {
+    width: 100%;
+    height: 34px;
+    padding-top: 6px;
+    color: #91b9a0;
+    font-family: Radiance;
+    font-size: 15px;
+    text-align: center;
+    border-top: 1px solid #35414a;
+}
+
+.StrategyShopStatus.StrategyShopStatusError { color: #ee7777; }
+
+.StrategyInventoryGrid {
+    width: 252px;
+    height: 284px;
+    margin: 22px 0px 0px 20px;
+    flow-children: right-wrap;
+}
+
+.StrategyInventorySlot {
+    width: 76px;
+    height: 76px;
+    margin: 4px;
+    background-color: #05080b;
+    border: 1px solid #46525b;
+    box-shadow: inset #000d 0px 0px 7px 0px;
+}
+
+.StrategyInventorySlot:hover { brightness: 1.3; border: 1px solid #7b8994; }
+.StrategyInventoryIcon { width: 100%; height: 100%; }
+
+.StrategyInventoryEmpty {
+    align: center center;
+    color: #39444c;
+    font-family: Radiance;
+    font-size: 16px;
+}
+
+.StrategyInventoryCharges {
+    min-width: 22px;
+    height: 22px;
+    padding: 1px 5px 0px 5px;
+    horizontal-align: right;
+    vertical-align: bottom;
+    color: white;
+    font-family: Radiance;
+    font-size: 15px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #080a0ce8;
+    border-radius: 2px;
+    text-shadow: 0px 1px 2px #000;
+}
+
+.StrategyInventoryHint {
+    width: 245px;
+    height: 70px;
+    margin: 24px 0px 0px 23px;
+    color: #7f8a92;
+    font-family: Radiance;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+}
+
+.AspectRatio16x10 .StrategyMain { width: 1480px; }
+.AspectRatio16x10 .StrategyLocalHeroCard { width: 245px; }
+.AspectRatio16x10 .StrategyInventoryPanel { width: 250px; }
+.AspectRatio16x10 .StrategyLocalHeroImageFrame { width: 205px; height: 365px; }
+.AspectRatio16x10 .StrategyInventoryGrid { margin-left: 0px; horizontal-align: center; }
+.AspectRatio16x10 .StrategyItemCard { width: 130px; height: 148px; margin-left: 3px; margin-right: 3px; }
+.AspectRatio16x10 .StrategyItemIconFrame { width: 98px; height: 72px; }
+
+.AspectRatio4x3 .StrategyTeamBar,
+.AspectRatio5x4 .StrategyTeamBar { width: 952px; }
+.AspectRatio4x3 .StrategyTeam,
+.AspectRatio5x4 .StrategyTeam { width: 207px; margin-left: 2px; margin-right: 2px; }
+.AspectRatio4x3 .StrategyHeroFrame,
+.AspectRatio5x4 .StrategyHeroFrame { width: 80px; height: 45px; margin-top: 15px; }
+.AspectRatio4x3 .StrategyTeamDetails,
+.AspectRatio5x4 .StrategyTeamDetails { width: 104px; }
+.AspectRatio4x3 .StrategyTeamName,
+.AspectRatio5x4 .StrategyTeamName { font-size: 12px; }
+.AspectRatio4x3 .StrategyPlayer,
+.AspectRatio5x4 .StrategyPlayer,
+.AspectRatio4x3 .StrategyHeroName,
+.AspectRatio5x4 .StrategyHeroName { font-size: 10px; }
+.AspectRatio4x3 .StrategyMain,
+.AspectRatio5x4 .StrategyMain { width: 1180px; }
+.AspectRatio4x3 .StrategyLocalHeroCard,
+.AspectRatio5x4 .StrategyLocalHeroCard { width: 210px; }
+.AspectRatio4x3 .StrategyInventoryPanel,
+.AspectRatio5x4 .StrategyInventoryPanel { width: 218px; }
+.AspectRatio4x3 .StrategyLocalHeroImageFrame,
+.AspectRatio5x4 .StrategyLocalHeroImageFrame { width: 176px; height: 315px; }
+.AspectRatio4x3 .StrategyInventoryGrid,
+.AspectRatio5x4 .StrategyInventoryGrid { width: 192px; height: 226px; margin-left: 13px; }
+.AspectRatio4x3 .StrategyInventorySlot,
+.AspectRatio5x4 .StrategyInventorySlot { width: 56px; height: 56px; }
+.AspectRatio4x3 .StrategyInventoryHint,
+.AspectRatio5x4 .StrategyInventoryHint { width: 190px; margin-left: 14px; }
+.AspectRatio4x3 .StrategyItemCard,
+.AspectRatio5x4 .StrategyItemCard { width: 116px; height: 122px; margin: 3px; }
+.AspectRatio4x3 .StrategyItemIconFrame,
+.AspectRatio5x4 .StrategyItemIconFrame { width: 82px; height: 60px; margin-top: 5px; }
+.AspectRatio4x3 .StrategyItemName,
+.AspectRatio5x4 .StrategyItemName { width: 108px; height: 29px; font-size: 10px; }

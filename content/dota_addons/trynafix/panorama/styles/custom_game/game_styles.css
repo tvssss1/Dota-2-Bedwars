@@ -1,0 +1,141 @@
+.root {
+    width: 500px;
+    height: 150px;
+    margin-bottom: 230px;
+    horizontal-align: center;
+    vertical-align: bottom;
+}
+
+.RecallResourcePrecache {
+    visibility: collapse;
+}
+
+.rootPanelChannel {
+    width: 100%;
+    height: 100%;
+}
+
+#rootPanelOfChannel {
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transform: translate3d(0px, 18px, 0px) scale3d(0.94, 0.94, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.22s;
+    transition-timing-function: ease-out;
+}
+
+#rootPanelOfChannel.IsActive {
+    opacity: 1;
+    transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1);
+}
+
+#rootPanelOfChannel.IsNotActive {
+    opacity: 0;
+    transform: translate3d(0px, 10px, 0px) scale3d(0.97, 0.97, 1);
+}
+
+#RecallGlow {
+    width: 410px;
+    height: 84px;
+    align: center center;
+    background-color: #00000000;
+    border-radius: 22px;
+    box-shadow: none;
+}
+
+#RecallCard {
+    width: 400px;
+    height: 76px;
+    padding: 9px 14px 9px 10px;
+    align: center center;
+    flow-children: right;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#292929f2), color-stop(0.55, #171717f5), to(#090909f5));
+    border: 1px solid #777777;
+    border-radius: 15px;
+    box-shadow: #000b 0px 4px 12px 0px;
+}
+
+#RecallIconFrame {
+    width: 58px;
+    height: 58px;
+    min-width: 58px;
+    vertical-align: center;
+    background-color: gradient(radial, 50% 50%, 0% 0%, 50% 50%, from(#686868), to(#181818));
+    border: 2px solid #d5d5d5;
+    border-radius: 29px;
+    box-shadow: #0009 0px 2px 5px 0px;
+    overflow: clip;
+}
+
+#RecallIcon {
+    width: 48px;
+    height: 48px;
+    align: center center;
+    border-radius: 24px;
+}
+
+#RecallIconShine {
+    width: 42px;
+    height: 18px;
+    margin-top: 5px;
+    horizontal-align: center;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#ffffff38), to(#ffffff00));
+    border-radius: 21px;
+}
+
+#RecallContent {
+    width: fill-parent-flow(1);
+    height: 58px;
+    margin-left: 13px;
+    flow-children: down;
+    vertical-align: center;
+}
+
+#ChannelText {
+    width: 100%;
+    height: 30px;
+    font-family: Reaver;
+    font-weight: semi-bold;
+    font-size: 22px;
+    letter-spacing: 1px;
+    color: #f4f4f4;
+    text-shadow: 0px 1px 2px 1.0 #000000cc;
+    text-overflow: shrink;
+    white-space: nowrap;
+}
+
+#mainBody {
+    width: 100%;
+    height: 13px;
+    margin-top: 5px;
+    background-color: #09070dbd;
+    border: 1px solid #555555;
+    border-radius: 7px;
+    overflow: clip;
+    box-shadow: inset #0009 0px 2px 5px 0px;
+}
+
+#FillBar {
+    width: 0%;
+    height: 100%;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#777777), color-stop(0.65, #d8d8d8), to(#ffffff));
+    border-radius: 6px;
+    box-shadow: none;
+    overflow: clip;
+    transition-property: width;
+    transition-duration: 3s;
+    transition-timing-function: linear;
+}
+
+#FillBar.Fill {
+    width: 100%;
+}
+
+#FillHighlight {
+    width: 100%;
+    height: 5px;
+    margin-top: 1px;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#ffffff80), to(#ffffff08));
+    border-radius: 5px;
+}

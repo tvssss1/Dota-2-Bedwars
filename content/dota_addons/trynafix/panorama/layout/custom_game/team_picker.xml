@@ -1,0 +1,41 @@
+<root>
+    <styles><include src="file://{resources}/styles/custom_game/team_picker.css" /></styles>
+    <scripts><include src="file://{resources}/scripts/custom_game/team_picker.js" /></scripts>
+    <Panel class="TrynaPickerRoot">
+        <Panel class="TrynaPickerBackdrop" />
+        <Panel class="TrynaPickerContent" flow-children="down">
+            <Panel class="TrynaPickerHeading" flow-children="down">
+                <Label class="TrynaPickerEyebrow" text="#team_picker_eyebrow" />
+                <Label class="TrynaPickerTitle" text="#team_picker_title" />
+                <Label class="TrynaPickerSubtitle" text="#team_picker_subtitle" />
+            </Panel>
+            <Panel class="TrynaPickerGrid" flow-children="down">
+                <Panel class="TrynaPickerRow" flow-children="right">
+                    <Button id="TeamCard6" class="TrynaPickerCard TrynaPickerRed" onactivate="TeamPicker.Select(6)">
+                        <Panel class="TrynaPickerCardWash" /><Panel class="TrynaPickerCorner TrynaPickerCornerTL" /><Panel class="TrynaPickerCorner TrynaPickerCornerBR" /><Panel class="TrynaPickerColorRail" />
+                        <Label class="TrynaPickerTeamNumber" text="I" />
+                        <Panel class="TrynaPickerCardBody" flow-children="right"><Image class="TrynaPickerBed" src="file://{images}/custom_game/recall/bed_red.png" scaling="stretch-to-fit-preserve-aspect" /><Panel class="TrynaPickerCardInfo" flow-children="down"><Panel class="TrynaPickerInfoHeader" flow-children="right"><Label class="TrynaPickerTeamName" text="#team_picker_red" /><Label id="TeamCapacity6" class="TrynaPickerCapacity" text="0 / 1" /></Panel><Panel class="TrynaPickerInfoBottom" flow-children="right"><Panel class="TrynaPickerOccupants" flow-children="down"><Panel id="TeamOccupant6_1" class="TrynaPickerOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar6_1" class="TrynaPickerAvatar" /><Label id="TeamPlayer6_1" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel><Panel id="TeamOccupant6_2" class="TrynaPickerOccupant TrynaPickerDuoOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar6_2" class="TrynaPickerAvatar" /><Label id="TeamPlayer6_2" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel></Panel><Label id="TeamAction6" class="TrynaPickerAction" text="#team_picker_join" /></Panel></Panel></Panel>
+                    </Button>
+                    <Button id="TeamCard7" class="TrynaPickerCard TrynaPickerBlue" onactivate="TeamPicker.Select(7)">
+                        <Panel class="TrynaPickerCardWash" /><Panel class="TrynaPickerCorner TrynaPickerCornerTL" /><Panel class="TrynaPickerCorner TrynaPickerCornerBR" /><Panel class="TrynaPickerColorRail" />
+                        <Label class="TrynaPickerTeamNumber" text="II" />
+                        <Panel class="TrynaPickerCardBody" flow-children="right"><Image class="TrynaPickerBed" src="file://{images}/custom_game/recall/bed_blue.png" scaling="stretch-to-fit-preserve-aspect" /><Panel class="TrynaPickerCardInfo" flow-children="down"><Panel class="TrynaPickerInfoHeader" flow-children="right"><Label class="TrynaPickerTeamName" text="#team_picker_blue" /><Label id="TeamCapacity7" class="TrynaPickerCapacity" text="0 / 1" /></Panel><Panel class="TrynaPickerInfoBottom" flow-children="right"><Panel class="TrynaPickerOccupants" flow-children="down"><Panel id="TeamOccupant7_1" class="TrynaPickerOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar7_1" class="TrynaPickerAvatar" /><Label id="TeamPlayer7_1" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel><Panel id="TeamOccupant7_2" class="TrynaPickerOccupant TrynaPickerDuoOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar7_2" class="TrynaPickerAvatar" /><Label id="TeamPlayer7_2" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel></Panel><Label id="TeamAction7" class="TrynaPickerAction" text="#team_picker_join" /></Panel></Panel></Panel>
+                    </Button>
+                </Panel>
+                <Panel class="TrynaPickerRow" flow-children="right">
+                    <Button id="TeamCard8" class="TrynaPickerCard TrynaPickerGreen" onactivate="TeamPicker.Select(8)">
+                        <Panel class="TrynaPickerCardWash" /><Panel class="TrynaPickerCorner TrynaPickerCornerTL" /><Panel class="TrynaPickerCorner TrynaPickerCornerBR" /><Panel class="TrynaPickerColorRail" />
+                        <Label class="TrynaPickerTeamNumber" text="III" />
+                        <Panel class="TrynaPickerCardBody" flow-children="right"><Image class="TrynaPickerBed" src="file://{images}/custom_game/recall/bed_green.png" scaling="stretch-to-fit-preserve-aspect" /><Panel class="TrynaPickerCardInfo" flow-children="down"><Panel class="TrynaPickerInfoHeader" flow-children="right"><Label class="TrynaPickerTeamName" text="#team_picker_green" /><Label id="TeamCapacity8" class="TrynaPickerCapacity" text="0 / 1" /></Panel><Panel class="TrynaPickerInfoBottom" flow-children="right"><Panel class="TrynaPickerOccupants" flow-children="down"><Panel id="TeamOccupant8_1" class="TrynaPickerOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar8_1" class="TrynaPickerAvatar" /><Label id="TeamPlayer8_1" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel><Panel id="TeamOccupant8_2" class="TrynaPickerOccupant TrynaPickerDuoOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar8_2" class="TrynaPickerAvatar" /><Label id="TeamPlayer8_2" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel></Panel><Label id="TeamAction8" class="TrynaPickerAction" text="#team_picker_join" /></Panel></Panel></Panel>
+                    </Button>
+                    <Button id="TeamCard9" class="TrynaPickerCard TrynaPickerOrange" onactivate="TeamPicker.Select(9)">
+                        <Panel class="TrynaPickerCardWash" /><Panel class="TrynaPickerCorner TrynaPickerCornerTL" /><Panel class="TrynaPickerCorner TrynaPickerCornerBR" /><Panel class="TrynaPickerColorRail" />
+                        <Label class="TrynaPickerTeamNumber" text="IV" />
+                        <Panel class="TrynaPickerCardBody" flow-children="right"><Image class="TrynaPickerBed" src="file://{images}/custom_game/recall/bed_orange.png" scaling="stretch-to-fit-preserve-aspect" /><Panel class="TrynaPickerCardInfo" flow-children="down"><Panel class="TrynaPickerInfoHeader" flow-children="right"><Label class="TrynaPickerTeamName" text="#team_picker_orange" /><Label id="TeamCapacity9" class="TrynaPickerCapacity" text="0 / 1" /></Panel><Panel class="TrynaPickerInfoBottom" flow-children="right"><Panel class="TrynaPickerOccupants" flow-children="down"><Panel id="TeamOccupant9_1" class="TrynaPickerOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar9_1" class="TrynaPickerAvatar" /><Label id="TeamPlayer9_1" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel><Panel id="TeamOccupant9_2" class="TrynaPickerOccupant TrynaPickerDuoOccupant" flow-children="right"><DOTAAvatarImage id="TeamAvatar9_2" class="TrynaPickerAvatar" /><Label id="TeamPlayer9_2" class="TrynaPickerPlayerName" text="#team_picker_available" /></Panel></Panel><Label id="TeamAction9" class="TrynaPickerAction" text="#team_picker_join" /></Panel></Panel></Panel>
+                    </Button>
+                </Panel>
+            </Panel>
+            <Panel class="TrynaPickerFooter" flow-children="down"><Label id="TeamPickerHint" class="TrynaPickerHint" text="#team_picker_hint" /><Panel class="TrynaPickerCountdown" flow-children="right"><Label class="TrynaPickerCountdownCaption" text="#team_picker_countdown" /><Label id="TeamPickerCountdown" class="TrynaPickerCountdownValue MonoNumbersFont" text="20" /></Panel></Panel>
+        </Panel>
+    </Panel>
+</root>

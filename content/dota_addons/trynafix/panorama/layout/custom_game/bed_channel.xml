@@ -1,0 +1,34 @@
+<root>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/bed_channel_script.js" />
+    </scripts>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/game_styles.css"/>
+    </styles>
+    <snippets>
+        <snippet name="BedTpChannel">
+            <Panel class="rootPanelChannel">
+                <Panel id="RecallGlow" />
+                <Panel id="RecallCard">
+                    <Panel id="RecallIconFrame">
+                        <Image id="RecallIcon" src="file://{images}/custom_game/recall/bed_red.png" />
+                    </Panel>
+                    <Panel id="RecallContent">
+                        <Label id="ChannelText" text="#custom_tp_channeling" />
+                        <Panel id="mainBody">
+                            <Panel id="FillBar">
+                                <Panel id="FillHighlight" />
+                            </Panel>
+                        </Panel>
+                    </Panel>
+                </Panel>
+            </Panel>
+        </snippet>
+    </snippets>
+    <Panel class="root">
+        <Image class="RecallResourcePrecache" src="file://{images}/custom_game/recall/bed_red.png" />
+        <Image class="RecallResourcePrecache" src="file://{images}/custom_game/recall/bed_blue.png" />
+        <Image class="RecallResourcePrecache" src="file://{images}/custom_game/recall/bed_green.png" />
+        <Image class="RecallResourcePrecache" src="file://{images}/custom_game/recall/bed_orange.png" />
+    </Panel>
+</root>

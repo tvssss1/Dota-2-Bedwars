@@ -1,0 +1,25 @@
+"Trynafix.Item.HarvestTonic.Activate"
+{
+    "operator_stacks"
+    {
+        "update_stack"
+        {
+            "reference_operator"
+            {
+                "operator" "sos_reference_stack"
+                "reference_stack" "dota_src1_3d"
+                "operator_variables"
+                {
+                    "vsnd_files" { "value" { "value0" "sounds/items/faerie_spark.vsnd" } }
+                    "volume" { "value" "0.650000" }
+                    "pitch" { "value" "1.060000" }
+                    "pitch_rand_min" { "value" "-0.015000" }
+                    "pitch_rand_max" { "value" "0.015000" }
+                    "soundlevel" { "value" "75.000000" }
+                    "distance_max" { "value" "1400.000000" }
+                    "event_type" { "value" "1.000000" }
+                }
+            }
+        }
+    }
+}

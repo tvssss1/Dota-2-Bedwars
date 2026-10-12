@@ -1,0 +1,434 @@
+.TrynaPickerRoot {
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+    background-color: #07090bf2;
+    font-family: Reaver;
+}
+
+.TrynaPickerBackdrop {
+    width: 100%;
+    height: 100%;
+    background-color: gradient(radial, 50% 45%, 0% 0%, 76% 76%, from(#303840), color-stop(0.46, #151a1f), to(#07090b));
+    opacity: 0.95;
+}
+
+.TrynaPickerContent {
+    width: 1220px;
+    height: 700px;
+    padding: 12px 25px;
+    horizontal-align: center;
+    vertical-align: center;
+    flow-children: down;
+    background-color: gradient(linear, 0% 0%, 100% 100%, from(#242a30f5), color-stop(0.45, #171c21f5), to(#0e1115f5));
+    border: 1px solid #6b7379;
+    border-radius: 18px;
+    box-shadow: #000d 0px 12px 36px 0px;
+}
+
+.TrynaPickerHeading {
+    width: 100%;
+    height: 125px;
+    flow-children: down;
+}
+
+.TrynaPickerEyebrow {
+    horizontal-align: center;
+    width: 100%;
+    height: 20px;
+    margin-top: 2px;
+    color: #b39b68;
+    font-size: 15px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0px 2px 7px #0009;
+}
+
+.TrynaPickerTitle {
+    horizontal-align: center;
+    width: 100%;
+    height: 48px;
+    margin-top: 7px;
+    color: #e7e3da;
+    font-size: 42px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-align: center;
+    text-shadow: 0px 2px 8px #000b;
+}
+
+.TrynaPickerSubtitle {
+    horizontal-align: center;
+    width: 100%;
+    height: 25px;
+    margin-top: 3px;
+    color: #b7bdc1;
+    font-family: Radiance;
+    font-size: 18px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.TrynaPickerGrid {
+    width: 100%;
+    height: 430px;
+    flow-children: down;
+}
+
+.TrynaPickerRow {
+    width: 100%;
+    height: 215px;
+    flow-children: right;
+}
+
+.TrynaPickerCard {
+    width: 570px;
+    height: 205px;
+    margin: 5px 7px;
+    overflow: clip;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#30373ddd), to(#1b2025ee));
+    border: 1px solid #555e65;
+    border-radius: 13px;
+    box-shadow: #0009 0px 5px 13px 0px;
+    transition-property: background-color, brightness, transform, border, box-shadow;
+    transition-duration: 0.14s;
+    transition-timing-function: ease-out;
+}
+
+/* Duo has an odd number of banners: center the final card under the first row. */
+.TrynaPickerCard.TrynaPickerDuoCentered {
+    margin-left: 299px;
+}
+
+.TrynaPickerCard:hover:not(.TrynaPickerOccupied) {
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#41494ff2), to(#252b30f2));
+    border: 1px solid #a08d66;
+    box-shadow: #b2935533 0px 5px 18px 0px;
+    brightness: 1.1;
+    transform: none;
+}
+
+.TrynaPickerRed:hover:not(.TrynaPickerOccupied) {
+    border: 1px solid #e05a5e;
+    box-shadow: #e05a5e66 0px 5px 20px 0px;
+}
+
+.TrynaPickerBlue:hover:not(.TrynaPickerOccupied) {
+    border: 1px solid #5aa9f0;
+    box-shadow: #5aa9f066 0px 5px 20px 0px;
+}
+
+.TrynaPickerGreen:hover:not(.TrynaPickerOccupied) {
+    border: 1px solid #67c47b;
+    box-shadow: #67c47b66 0px 5px 20px 0px;
+}
+
+.TrynaPickerOrange:hover:not(.TrynaPickerOccupied) {
+    border: 1px solid #ed994b;
+    box-shadow: #ed994b66 0px 5px 20px 0px;
+}
+
+.TrynaPickerCard:active:not(.TrynaPickerOccupied) {
+    transform: scale3d(0.99, 0.99, 1);
+}
+
+.TrynaPickerCard.TrynaPickerOccupied {
+    saturation: 0.25;
+    opacity: 0.62;
+    brightness: 0.72;
+}
+
+.TrynaPickerCard.TrynaPickerSelected {
+    border: 2px solid #c5a86c;
+    background-color: gradient(linear, 0% 0%, 100% 0%, from(#444237f5), to(#24251ff5));
+    box-shadow: #b8955266 0px 4px 20px 0px;
+    brightness: 1.12;
+}
+
+.TrynaPickerCardWash {
+    width: 100%;
+    height: 100%;
+    opacity: 0.16;
+}
+
+.TrynaPickerRed .TrynaPickerCardWash { background-color: gradient(linear, 0% 0%, 65% 100%, from(#d84141), to(#0000)); }
+.TrynaPickerBlue .TrynaPickerCardWash { background-color: gradient(linear, 0% 0%, 65% 100%, from(#3d8fe5), to(#0000)); }
+.TrynaPickerGreen .TrynaPickerCardWash { background-color: gradient(linear, 0% 0%, 65% 100%, from(#3fab60), to(#0000)); }
+.TrynaPickerOrange .TrynaPickerCardWash { background-color: gradient(linear, 0% 0%, 65% 100%, from(#db802d), to(#0000)); }
+
+.TrynaPickerColorRail {
+    width: 7px;
+    height: 100%;
+    box-shadow: #000a 3px 0px 6px 0px;
+}
+
+.TrynaPickerRed .TrynaPickerColorRail { background-color: #e05a5e; }
+.TrynaPickerBlue .TrynaPickerColorRail { background-color: #5aa9f0; }
+.TrynaPickerGreen .TrynaPickerColorRail { background-color: #67c47b; }
+.TrynaPickerOrange .TrynaPickerColorRail { background-color: #ed994b; }
+
+.TrynaPickerBlue .TrynaPickerColorRail,
+.TrynaPickerOrange .TrynaPickerColorRail {
+    horizontal-align: right;
+}
+
+.TrynaPickerCorner {
+    width: 45px;
+    height: 3px;
+    background-color: #aa9568;
+    opacity: 0.7;
+}
+
+.TrynaPickerCornerTL { x: 17px; y: 12px; }
+.TrynaPickerCornerBR { horizontal-align: right; vertical-align: bottom; margin-right: 17px; margin-bottom: 12px; }
+
+.TrynaPickerTeamNumber {
+    x: 25px;
+    y: 17px;
+    color: #9fa5a9;
+    font-size: 13px;
+    letter-spacing: 2px;
+}
+
+.TrynaPickerCardBody {
+    x: 20px;
+    y: 34px;
+    width: 535px;
+    height: 150px;
+    flow-children: right;
+}
+
+.TrynaPickerBed {
+    x: 0px;
+    y: 0px;
+    width: 145px;
+    height: 145px;
+    padding: 0px;
+    background-color: #000000;
+    border: 1px solid #626a70;
+    border-radius: 9px;
+    box-shadow: #0008 0px 3px 8px 0px;
+    transition-property: transform, brightness;
+    transition-duration: 0.14s;
+}
+
+.TrynaPickerCard:hover:not(.TrynaPickerOccupied) .TrynaPickerBed {
+    transform: scale3d(1.035, 1.035, 1);
+    brightness: 1.17;
+}
+
+.TrynaPickerOrange .TrynaPickerBed {
+    transform: scale3d(-1, 1, 1);
+}
+
+.TrynaPickerOrange:hover:not(.TrynaPickerOccupied) .TrynaPickerBed {
+    transform: scale3d(-1.035, 1.035, 1);
+}
+
+.TrynaPickerCardInfo {
+    x: 0px;
+    y: 0px;
+    width: 375px;
+    height: 95px;
+    margin-left: 15px;
+    vertical-align: center;
+    flow-children: down;
+}
+
+.TrynaPickerInfoHeader {
+    width: 100%;
+    height: 39px;
+    flow-children: right;
+}
+
+.TrynaPickerTeamName {
+    width: 285px;
+    height: 39px;
+    color: #f7f0fa;
+    font-size: 27px;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-shadow: 0px 2px 6px #000;
+}
+
+.TrynaPickerInfoBottom {
+    width: 100%;
+    height: 46px;
+    margin-top: 10px;
+    flow-children: right;
+}
+
+.TrynaPickerOccupants {
+    width: 260px;
+    height: 92px;
+    flow-children: down;
+}
+
+.TrynaPickerDuoOccupant {
+    visibility: collapse;
+}
+
+.TrynaPickerDuoMode .TrynaPickerDuoOccupant {
+    visibility: visible;
+}
+
+.TrynaPickerDuoMode .TrynaPickerCardInfo {
+    height: 140px;
+}
+
+.TrynaPickerDuoMode .TrynaPickerInfoBottom {
+    height: 92px;
+    margin-top: 2px;
+}
+
+.TrynaPickerDuoMode .TrynaPickerOccupant {
+    height: 42px;
+    margin-bottom: 3px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+}
+
+.TrynaPickerDuoMode .TrynaPickerAvatar {
+    width: 34px;
+    height: 34px;
+}
+
+.TrynaPickerDuoMode .TrynaPickerAction {
+    margin-top: 27px;
+}
+
+.TrynaPickerOccupant {
+    width: 260px;
+    height: 46px;
+    margin-top: 0px;
+    padding: 4px 7px;
+    flow-children: right;
+    background-color: #0f0c16a8;
+    border: 1px solid #4f575d;
+    border-radius: 7px;
+}
+
+.TrynaPickerAvatar {
+    width: 36px;
+    height: 36px;
+    vertical-align: center;
+    border: 1px solid #7c858b;
+    border-radius: 4px;
+    visibility: collapse;
+}
+
+.TrynaPickerAvatar.TrynaPickerAvatarVisible { visibility: visible; }
+
+.TrynaPickerPlayerName {
+    width: 185px;
+    height: 31px;
+    margin-left: 8px;
+    vertical-align: center;
+    color: #d6dadd;
+    font-family: Radiance;
+    font-size: 16px;
+    text-overflow: ellipsis;
+}
+
+.TrynaPickerCardStatus {
+    x: 0px;
+    y: 0px;
+    width: 95px;
+    height: 88px;
+    margin-left: 10px;
+    vertical-align: center;
+    flow-children: down;
+}
+
+.TrynaPickerCapacity {
+    width: 85px;
+    height: 30px;
+    margin-top: 3px;
+    color: #969da2;
+    font-size: 14px;
+    letter-spacing: 2px;
+    text-align: right;
+}
+
+.TrynaPickerAction {
+    width: 100px;
+    height: 36px;
+    margin-top: 5px;
+    margin-left: 15px;
+    padding-top: 8px;
+    horizontal-align: center;
+    color: white;
+    font-size: 14px;
+    font-weight: semi-bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#66717a), to(#394249));
+    border: 1px solid #929da4;
+    border-radius: 7px;
+    box-shadow: #0008 0px 3px 8px 0px;
+}
+
+.TrynaPickerSelected .TrynaPickerAction {
+    color: #fff4c8;
+    border: 1px solid #e0b85c;
+    background-color: gradient(linear, 0% 0%, 0% 100%, from(#8b6a2e), to(#55401d));
+}
+
+.TrynaPickerOccupied .TrynaPickerAction {
+    color: #9c929f;
+    border: 1px solid #675d6d;
+    background-color: #29232d;
+    box-shadow: none;
+}
+
+.TrynaPickerFooter {
+    width: 100%;
+    height: 105px;
+    margin-top: 7px;
+    flow-children: down;
+}
+
+.TrynaPickerHint {
+    horizontal-align: center;
+    color: #c3c8cb;
+    font-family: Radiance;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+.TrynaPickerCountdown {
+    margin-top: 12px;
+    padding: 7px 16px;
+    horizontal-align: center;
+    flow-children: right;
+    background-color: #0f0c16a8;
+    border: 1px solid #4f575d;
+    border-radius: 9px;
+}
+
+.TrynaPickerCountdownCaption {
+    vertical-align: center;
+    color: #aeb5ba;
+    font-size: 14px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.TrynaPickerCountdownValue {
+    width: 52px;
+    margin-left: 12px;
+    color: #d0b477;
+    font-size: 25px;
+    font-weight: bold;
+    text-align: center;
+    text-shadow: 0px 0px 7px #b8955266;
+}
+
+.TrynaPickerCountdownValue.TrynaPickerUrgent {
+    color: #ff8888;
+    text-shadow: 0px 0px 8px #ff5555aa;
+}

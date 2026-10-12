@@ -1,0 +1,131 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/hero_strategy_overlay.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/hero_strategy_overlay.js" />
+    </scripts>
+
+    <Panel class="StrategyOverlayRoot" hittest="false" hittestchildren="true">
+        <Panel class="StrategyBackdrop" hittest="false" />
+        <Panel class="StrategyBackdropGlow" hittest="false" />
+        <Panel class="StrategySlash StrategySlashOne" hittest="false" />
+        <Panel class="StrategySlash StrategySlashTwo" hittest="false" />
+        <Panel class="StrategySlash StrategySlashThree" hittest="false" />
+        <Panel class="StrategySlash StrategySlashFour" hittest="false" />
+
+        <Panel class="StrategySystemButtons" flow-children="right">
+            <Button id="StrategyDashboardButton" class="StrategySystemButton" onactivate="DOTAHUDShowDashboard();">
+                <Panel class="StrategySystemIcon StrategyDashboardGlyph" />
+            </Button>
+            <Button id="StrategySettingsButton" class="StrategySystemButton" onactivate="DOTAShowSettingsRebornPopup();">
+                <Panel class="StrategySystemIcon StrategySettingsGlyph" />
+            </Button>
+        </Panel>
+
+        <Panel class="StrategyTeamBar" flow-children="right" hittest="false" hittestchildren="false">
+            <Panel id="StrategyTeam6" class="StrategyTeam StrategyTeamRed" flow-children="right">
+                <Panel class="StrategyTeamColor" />
+                <Panel class="StrategyHeroFrame">
+                    <DOTAHeroImage id="StrategyHero6" class="StrategyHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+                    <Label id="StrategyEmpty6" class="StrategyEmptyHero" text="?" />
+                </Panel>
+                <Panel class="StrategyTeamDetails" flow-children="down">
+                    <Label class="StrategyTeamName" text="#team_picker_red" />
+                    <Label id="StrategyPlayer6" class="StrategyPlayer" text="#draft_empty_team" />
+                    <Label id="StrategyHeroName6" class="StrategyHeroName" text="#draft_waiting_pick" />
+                </Panel>
+            </Panel>
+
+            <Panel id="StrategyTeam7" class="StrategyTeam StrategyTeamBlue" flow-children="right">
+                <Panel class="StrategyTeamColor" />
+                <Panel class="StrategyHeroFrame">
+                    <DOTAHeroImage id="StrategyHero7" class="StrategyHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+                    <Label id="StrategyEmpty7" class="StrategyEmptyHero" text="?" />
+                </Panel>
+                <Panel class="StrategyTeamDetails" flow-children="down">
+                    <Label class="StrategyTeamName" text="#team_picker_blue" />
+                    <Label id="StrategyPlayer7" class="StrategyPlayer" text="#draft_empty_team" />
+                    <Label id="StrategyHeroName7" class="StrategyHeroName" text="#draft_waiting_pick" />
+                </Panel>
+            </Panel>
+
+            <Panel class="StrategyTimer" flow-children="down">
+                <Label class="StrategyTimerCaption" text="#draft_strategy" />
+                <Label id="StrategyTimerValue" class="StrategyTimerValue MonoNumbersFont" text="15" />
+                <Panel class="StrategyTimerRule" />
+            </Panel>
+
+            <Panel id="StrategyTeam8" class="StrategyTeam StrategyTeamGreen" flow-children="right">
+                <Panel class="StrategyTeamColor" />
+                <Panel class="StrategyHeroFrame">
+                    <DOTAHeroImage id="StrategyHero8" class="StrategyHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+                    <Label id="StrategyEmpty8" class="StrategyEmptyHero" text="?" />
+                </Panel>
+                <Panel class="StrategyTeamDetails" flow-children="down">
+                    <Label class="StrategyTeamName" text="#team_picker_green" />
+                    <Label id="StrategyPlayer8" class="StrategyPlayer" text="#draft_empty_team" />
+                    <Label id="StrategyHeroName8" class="StrategyHeroName" text="#draft_waiting_pick" />
+                </Panel>
+            </Panel>
+
+            <Panel id="StrategyTeam9" class="StrategyTeam StrategyTeamOrange" flow-children="right">
+                <Panel class="StrategyTeamColor" />
+                <Panel class="StrategyHeroFrame">
+                    <DOTAHeroImage id="StrategyHero9" class="StrategyHeroPortrait" heroimagestyle="landscape" scaling="stretch-to-fit-preserve-aspect" />
+                    <Label id="StrategyEmpty9" class="StrategyEmptyHero" text="?" />
+                </Panel>
+                <Panel class="StrategyTeamDetails" flow-children="down">
+                    <Label class="StrategyTeamName" text="#team_picker_orange" />
+                    <Label id="StrategyPlayer9" class="StrategyPlayer" text="#draft_empty_team" />
+                    <Label id="StrategyHeroName9" class="StrategyHeroName" text="#draft_waiting_pick" />
+                </Panel>
+            </Panel>
+        </Panel>
+
+        <Panel class="StrategyMain" flow-children="down">
+            <Panel class="StrategyHeading" flow-children="down">
+                <Label class="StrategyEyebrow" text="#draft_eyebrow" />
+                <Label class="StrategyTitle" text="#strategy_title" />
+                <Label class="StrategySubtitle" text="#strategy_subtitle" />
+            </Panel>
+
+            <Panel class="StrategyContent" flow-children="right">
+                <Panel class="StrategyLocalHeroCard" flow-children="down">
+                    <Label class="StrategySectionTitle" text="#strategy_selected_hero" />
+                    <Panel class="StrategyLocalHeroImageFrame">
+                        <DOTAHeroImage id="StrategyLocalHeroPortrait" class="StrategyLocalHeroPortrait" heroimagestyle="portrait" scaling="stretch-to-fill" />
+                        <Label id="StrategyLocalHeroEmpty" class="StrategyLocalHeroEmpty" text="?" />
+                    </Panel>
+                    <Label id="StrategyLocalHeroName" class="StrategyLocalHeroName" text="#strategy_waiting_hero" />
+                    <Label id="StrategyLocalPlayerName" class="StrategyLocalPlayerName" text="" />
+                    <Button id="StrategyReadyButton" class="StrategyReadyBadge" onactivate="DOTASkipIntoGame();">
+                        <Label text="#strategy_enter_game" />
+                    </Button>
+                </Panel>
+
+                <Panel class="StrategyShopPanel" flow-children="down">
+                    <Panel class="StrategyShopHeader" flow-children="right">
+                        <Panel class="StrategyShopHeaderText" flow-children="down">
+                            <Label class="StrategySectionTitle" text="#strategy_shop_title" />
+                            <Label class="StrategyShopHint" text="#strategy_shop_hint" />
+                        </Panel>
+                        <Panel class="StrategyGold" flow-children="right">
+                            <Label class="StrategyGoldIcon" text="●" />
+                            <Label id="StrategyGoldValue" class="StrategyGoldValue MonoNumbersFont" text="600" />
+                            <Label class="StrategyGoldCaption" text="#strategy_gold" />
+                        </Panel>
+                    </Panel>
+                    <Panel id="StrategyShopGrid" class="StrategyShopGrid" />
+                    <Label id="StrategyShopStatus" class="StrategyShopStatus" text="#strategy_shop_status_ready" />
+                </Panel>
+
+                <Panel class="StrategyInventoryPanel" flow-children="down">
+                    <Label class="StrategySectionTitle" text="#strategy_inventory" />
+                    <Panel id="StrategyInventoryGrid" class="StrategyInventoryGrid" />
+                    <Label class="StrategyInventoryHint" text="#strategy_inventory_hint" />
+                </Panel>
+            </Panel>
+        </Panel>
+    </Panel>
+</root>

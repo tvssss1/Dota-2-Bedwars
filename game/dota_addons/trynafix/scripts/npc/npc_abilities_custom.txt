@@ -1,0 +1,177 @@
+// Dota Heroes File
+"DOTAAbilities"
+{
+	"Version"		"1"
+	"ability_home_bed_barrier"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/ability_home_bed_barrier.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "item_crimson_guard"
+		"MaxLevel" "1"
+	}
+
+	"ability_spawn_purple"
+	{
+		"BaseClass"                 "ability_lua"
+		"ScriptFile"                "abilities/ability_purple_money.lua"
+		"AbilityBehavior"           "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	}
+	"ability_custom_roshan_bash"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/custom_roshan_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName" "roshan_bash"
+		"MaxLevel" "3"
+	}
+	"ability_custom_roshan_slam"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/custom_roshan_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitDamageType" "DAMAGE_TYPE_MAGICAL"
+		"AbilityCastPoint" "0.3"
+		"AbilityCooldown" "12 10 8"
+		"AbilityManaCost" "0"
+		"AbilityTextureName" "roshan_slam"
+		"MaxLevel" "3"
+	}
+	"convergence_perk_balloon_brigade"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "consumables/seasonal_ti11_balloon_radiant"
+		"AbilityCooldown" "40 35 30"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "max_balloons" "1 2 3" }
+			"02" { "var_type" "FIELD_INTEGER" "balloon_duration" "15 20 25" }
+			"03" { "var_type" "FIELD_INTEGER" "balloon_cooldown" "40 35 30" }
+			"04" { "var_type" "FIELD_INTEGER" "move_speed_pct" "8 10 12" }
+			"05" { "var_type" "FIELD_INTEGER" "evasion_pct" "10 15 20" }
+		}
+	}
+	"convergence_perk_temporal_snapback"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "faceless_void_time_walk"
+		"AbilityCooldown" "55 47 41"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "health_threshold_pct" "30" }
+			"02" { "var_type" "FIELD_FLOAT" "rewind_seconds" "3" }
+			"03" { "var_type" "FIELD_INTEGER" "health_restore_pct" "30 40 47" }
+			"04" { "var_type" "FIELD_INTEGER" "rupture_damage" "80 130 180" }
+			"05" { "var_type" "FIELD_INTEGER" "rupture_slow_pct" "20 30 40" }
+			"06" { "var_type" "FIELD_INTEGER" "rupture_radius" "325" }
+		}
+	}
+	"convergence_perk_wild_card"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "ogre_magi_multicast"
+		"AbilityCooldown" "8 7 6"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "casts_required" "3" }
+			"02" { "var_type" "FIELD_INTEGER" "blink_distance" "250 310 350" }
+			"03" { "var_type" "FIELD_INTEGER" "barrier_amount" "160 225 270" }
+			"04" { "var_type" "FIELD_INTEGER" "push_distance" "180 230 265" }
+			"05" { "var_type" "FIELD_INTEGER" "firework_damage" "110 170 230" }
+		}
+	}
+	"convergence_perk_treasure_trickster"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "alchemist_goblins_greed"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "duplicate_chance_pct" "20 28 34" }
+			"02" { "var_type" "FIELD_INTEGER" "rush_duration" "6" }
+			"03" { "var_type" "FIELD_INTEGER" "rush_move_speed" "500" }
+			"04" { "var_type" "FIELD_INTEGER" "rush_bonus_damage" "20 35 50" }
+		}
+	}
+	"convergence_perk_holo_hustle"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "phantom_lancer_doppelwalk"
+		"AbilityCooldown" "40 34 30"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "health_threshold_pct" "50" }
+			"02" { "var_type" "FIELD_FLOAT" "invisibility_duration" "0.8 1.1 1.25" }
+			"03" { "var_type" "FIELD_INTEGER" "move_speed_pct" "20 25 28" }
+			"04" { "var_type" "FIELD_FLOAT" "decoy_duration" "4 5 5.5" }
+			"05" { "var_type" "FIELD_INTEGER" "decoy_burst_damage" "80 130 180" }
+			"06" { "var_type" "FIELD_INTEGER" "decoy_burst_slow_pct" "20 25 30" }
+		}
+	}
+	"convergence_perk_storm_chaser"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "razor_unstable_current"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "movement_required" "900 750 600" }
+			"02" { "var_type" "FIELD_INTEGER" "lightning_damage" "90 145 200" }
+			"03" { "var_type" "FIELD_INTEGER" "lightning_targets" "2 3 4" }
+			"04" { "var_type" "FIELD_INTEGER" "bounce_radius" "600" }
+		}
+	}
+	"convergence_perk_kaiju_protocol"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "primal_beast_uproar"
+		"AbilityCooldown" "24 21 18"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "hits_required" "5" }
+			"02" { "var_type" "FIELD_INTEGER" "form_duration" "5 6 7" }
+			"03" { "var_type" "FIELD_INTEGER" "burst_damage" "100 165 230" }
+			"04" { "var_type" "FIELD_INTEGER" "bonus_damage" "30 50 70" }
+			"05" { "var_type" "FIELD_INTEGER" "attack_speed" "30 45 60" }
+			"06" { "var_type" "FIELD_INTEGER" "damage_reduction_pct" "15 20 25" }
+			"07" { "var_type" "FIELD_INTEGER" "status_resistance_pct" "20 25 30" }
+			"08" { "var_type" "FIELD_INTEGER" "model_scale_pct" "20 30 40" }
+		}
+	}
+	"convergence_perk_meteor_contract"
+	{
+		"BaseClass" "ability_lua"
+		"ScriptFile" "abilities/convergence_perk_abilities.lua"
+		"AbilityBehavior" "DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_HIDDEN | DOTA_ABILITY_BEHAVIOR_NOT_LEARNABLE"
+		"AbilityTextureName" "invoker_chaos_meteor"
+		"AbilityCooldown" "14 12 10"
+		"MaxLevel" "3"
+		"AbilitySpecial"
+		{
+			"01" { "var_type" "FIELD_INTEGER" "search_radius" "900" }
+			"02" { "var_type" "FIELD_FLOAT" "impact_delay" "0.8" }
+			"03" { "var_type" "FIELD_INTEGER" "impact_radius" "250 275 300" }
+			"04" { "var_type" "FIELD_INTEGER" "impact_damage" "120 180 240" }
+			"05" { "var_type" "FIELD_FLOAT" "stun_duration" "0.4 0.6 0.8" }
+		}
+	}
+}

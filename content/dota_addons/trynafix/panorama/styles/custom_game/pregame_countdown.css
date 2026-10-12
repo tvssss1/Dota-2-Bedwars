@@ -1,0 +1,49 @@
+.PregameCountdownViewport {
+    width: 100%;
+    height: 100%;
+}
+
+#PregameCountdownRoot {
+    width: 420px;
+    height: 260px;
+    horizontal-align: center;
+    vertical-align: center;
+    opacity: 0;
+    transform: scale3d(1.65, 1.65, 1);
+    transition-property: opacity, transform;
+    transition-duration: 0.18s;
+    transition-timing-function: ease-out;
+}
+
+#PregameCountdownRoot.Visible {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+}
+
+#PregameCountdownNumber {
+    horizontal-align: center;
+    vertical-align: center;
+    margin-bottom: 34px;
+    font-family: Reaver;
+    font-size: 150px;
+    font-weight: bold;
+    color: gradient(linear, 0% 0%, 0% 100%, from(#fff6cf), color-stop(0.55, #ffc84a), to(#d86b12));
+    text-shadow: 0px 4px 10px 5 #000000e8;
+}
+
+#PregameCountdownCaption {
+    horizontal-align: center;
+    vertical-align: center;
+    margin-top: 155px;
+    font-family: Reaver;
+    font-size: 27px;
+    font-weight: semi-bold;
+    letter-spacing: 5px;
+    color: #f4e5c3;
+    text-shadow: 0px 2px 5px 3 #000000e8;
+}
+
+#PregameCountdownRoot.Go #PregameCountdownNumber {
+    font-size: 92px;
+    color: gradient(linear, 0% 0%, 0% 100%, from(#f4ffda), to(#7fd33f));
+}

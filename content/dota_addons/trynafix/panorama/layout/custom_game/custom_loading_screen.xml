@@ -1,0 +1,63 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/custom_loading_screen.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/custom_loading_screen.js" />
+    </scripts>
+
+    <Panel class="BedWarsLoadingRoot">
+        <Image id="BedWarsLoadingBackground"
+               src="file://{images}/custom_game/loading_screen/bedwars_loading.png"
+               scaling="stretch-to-cover-preserve-aspect" />
+        <Panel class="BedWarsLoadingVignette" />
+        <Panel class="BedWarsLoadingTopShade" />
+
+        <Panel class="LoadingLowerSafeArea">
+            <Panel id="LoadingTipCard" class="LoadingTipCard">
+                <Panel class="LoadingTipAccent" />
+                <Panel class="LoadingTipContent">
+                    <Panel class="LoadingTipIconFrame">
+                        <Image id="LoadingTipIcon" class="LoadingTipIcon" scaling="stretch-to-fit-preserve-aspect" />
+                        <Panel class="LoadingTipIconGlow" />
+                    </Panel>
+                    <Panel class="LoadingTipCopy">
+                        <Label class="LoadingTipEyebrow" text="#loading_tip_eyebrow" />
+                        <Label id="LoadingTipTitle" class="LoadingTipTitle" text="" />
+                        <Label id="LoadingTipBody" class="LoadingTipBody" text="" />
+                    </Panel>
+                </Panel>
+
+                <Panel class="LoadingTipControls">
+                    <Button id="LoadingTipPrevious" class="LoadingTipButton" onactivate="LoadingTips.Previous();">
+                        <Label text="#loading_tip_previous" />
+                    </Button>
+                    <Panel class="LoadingTipDotsFrame"><Panel id="LoadingTipDots" class="LoadingTipDots" /></Panel>
+                    <Button id="LoadingTipNext" class="LoadingTipButton" onactivate="LoadingTips.Next();">
+                        <Label text="#loading_tip_next" />
+                    </Button>
+                </Panel>
+            </Panel>
+
+            <Panel class="BedWarsLoadingStatus">
+                <Panel class="BedWarsLoadingSpinner">
+                    <Panel class="BedWarsLoadingSpinnerInner" />
+                </Panel>
+                <Label text="#loading_status" />
+            </Panel>
+        </Panel>
+
+        <Panel id="LoadingPlayersPanel" class="LoadingPlayersPanel" hittest="false" hittestchildren="false">
+            <Label id="LoadingPlayersCount" class="LoadingPlayersHeading" text="#loading_players_connecting" />
+            <Label class="LoadingPlayersHint" text="#loading_players_waiting" />
+            <DOTALoadingScreenPlayersList id="LoadingPlayersList" team="-1" />
+        </Panel>
+
+        <Panel class="BedWarsDashboardControl">
+            <Button class="BedWarsDashboardButton" onactivate="DOTAShowDashboard()">
+                <Label class="BedWarsDashboardArrow" text="‹" />
+                <Label class="BedWarsDashboardLabel" text="#loading_return_dashboard" />
+            </Button>
+        </Panel>
+    </Panel>
+</root>

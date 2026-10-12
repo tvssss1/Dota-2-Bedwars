@@ -1,0 +1,14 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/pregame_countdown.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/pregame_countdown.js" />
+    </scripts>
+    <Panel class="PregameCountdownViewport" hittest="false" hittestchildren="false">
+        <Panel id="PregameCountdownRoot">
+            <Label id="PregameCountdownNumber" text="" />
+            <Label id="PregameCountdownCaption" text="#pregame_countdown_caption" />
+        </Panel>
+    </Panel>
+</root>
