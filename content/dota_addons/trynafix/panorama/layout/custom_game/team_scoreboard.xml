@@ -46,6 +46,14 @@
                 </Panel>
             </Panel>
           </Panel>
+          <Panel id="HeroInventoryInspect" class="HeroInventoryInspect Hidden" hittest="true" hittestchildren="true">
+              <Panel class="InspectHeader">
+                  <DOTAHeroImage id="InspectHeroPortrait" class="InspectHeroPortrait" hittest="false" heroimagestyle="icon" scaling="stretch-to-fit-preserve-aspect" />
+                  <Label id="InspectHeroTitle" class="InspectHeroTitle" text="#scoreboard_inventory_title" />
+                  <Button id="InspectClose" class="InspectClose"><Label text="×" /></Button>
+              </Panel>
+              <Panel id="InspectInventorySlots" class="InspectInventorySlots" flow-children="right" />
+          </Panel>
         </Panel>
     </Panel>
 </root>

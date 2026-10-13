@@ -1,5 +1,4 @@
 local MapLocations = require("settings/map_locations")
-
 if MidRewardService == nil then MidRewardService = { started = false } end
 
 MidRewardService.CENTER = MapLocations.MID_CENTER_FALLBACK
@@ -23,10 +22,13 @@ function MidRewardService:RewardHeroes()
         if PlayerResource:IsValidPlayerID(playerID) then
             local hero = PlayerResource:GetSelectedHeroEntity(playerID)
             if self:IsEligible(hero) then
-                local xp = RandomInt(self.MIN_XP, self.MAX_XP)
-                local gold = RandomInt(self.MIN_GOLD, self.MAX_GOLD)
-                hero:AddExperience(xp, DOTA_ModifyXP_Unspecified, false, true)
-                PlayerResource:ModifyGold(playerID, gold, true, DOTA_ModifyGold_Unspecified)
+                hero:AddExperience(RandomInt(self.MIN_XP, self.MAX_XP), DOTA_ModifyXP_Unspecified, false, true)
+                PlayerResource:ModifyGold(
+                    playerID,
+                    RandomInt(self.MIN_GOLD, self.MAX_GOLD),
+                    true,
+                    DOTA_ModifyGold_Unspecified
+                )
             end
         end
     end
@@ -57,7 +59,6 @@ function MidRewardService:Init()
     -- Refresh this even after a tools-mode script reload, where the service table
     -- and its active timer may already exist.
     self.CENTER = MapLocations.GetMidCenter()
-
     ListenToGameEvent("game_rules_state_change", function()
         if GameRules:State_Get() == DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then self:Start() end
     end, nil)

@@ -1,6 +1,7 @@
 require("services/purple_currency")
 require("services/bed_utils")
 require("services/base_utils")
+local BaseGoldGenerator = require("services/base_gold_generator")
 
 if HopeShop == nil then HopeShop = { busy = {} } end
 HopeShop.CHECKOUT_RADIUS = 900
@@ -9,7 +10,8 @@ HopeShop.CATALOG = {
     recall={name="#hope_shop_recall_name",description="#hope_shop_recall_desc",icon="item_tpscroll",price=3,delivery="item",item="item_custom_tp"},
     raid={name="#hope_shop_raid_name",description="#hope_shop_raid_desc",icon="file://{images}/bed_raiders.png",price=5,delivery="item",item="item_bed_raiders"},
     repair={name="#hope_shop_repair_name",description="#hope_shop_repair_desc",icon="item_repair_kit",price=5,delivery="service"},
-    shield={name="#hope_shop_shield_name",description="#hope_shop_shield_desc",icon="item_crimson_guard",price=7,delivery="service"}
+    shield={name="#hope_shop_shield_name",description="#hope_shop_shield_desc",icon="item_crimson_guard",price=7,delivery="service"},
+    generator_refill={name="#hope_shop_generator_refill_name",description="#hope_shop_generator_refill_desc",icon="item_hand_of_midas",price=10,delivery="service"}
 }
 
 local function playerFromEvent(source, data)
@@ -37,11 +39,23 @@ end
 function HopeShop:GetContext(id)
     local hero=PlayerResource:GetSelectedHeroEntity(id)
     local nearBase=hero and hero:IsAlive() and BaseUtils:IsNearTeamBase(hero,self.CHECKOUT_RADIUS) or false
-    return {can_checkout=nearBase==true,nearby_base=nearBase==true,balance=PurpleCurrency:Get(id)}
+    local team=PlayerResource:GetTeam(id)
+    return {
+        can_checkout=nearBase==true,
+        nearby_base=nearBase==true,
+        balance=PurpleCurrency:Get(id),
+        generator_remaining=BaseGoldGenerator:GetRemaining(team),
+        generator_capacity=BaseGoldGenerator.CAPACITY
+    }
 end
 function HopeShop:Send(player,event,extra)
     local data=self:GetContext(player:GetPlayerID()); for k,v in pairs(extra or {}) do data[k]=v end
     CustomGameEventManager:Send_ServerToPlayer(player,event,data)
+end
+function HopeShop:MarkBaseForPlayer(player,hero)
+    local position=hero and BaseUtils:GetTeamBasePosition(hero:GetTeamNumber()) or nil
+    if not position then return end
+    MinimapEvent(hero:GetTeamNumber(),hero,position.x,position.y,DOTA_MINIMAP_EVENT_HINT_LOCATION,3)
 end
 function HopeShop:DeliverItem(hero,itemName)
     local item=CreateItem(itemName,hero,hero); if not item then return false end
@@ -55,6 +69,11 @@ function HopeShop:DeliverItem(hero,itemName)
     return false
 end
 function HopeShop:ApplyService(entry,bed,hero)
+    if entry=="generator_refill" then
+        local team=hero:GetTeamNumber()
+        if not BaseGoldGenerator:IsEmpty(team) then return false,"generator_not_empty" end
+        return BaseGoldGenerator:Refill(team),"delivery_failed"
+    end
     if entry=="repair" then
         if bed:GetHealth()>=bed:GetMaxHealth() then return false,"bed_full" end
         bed:SetHealth(math.min(bed:GetMaxHealth(),bed:GetHealth()+1)); return true
@@ -78,12 +97,16 @@ function HopeShop:Purchase(source,data)
     if not entry then code="invalid_entry" elseif not hero or hero:IsNull() or not hero:IsAlive() then code="hero_dead"
     elseif not nearBase then code="no_base"
     elseif PurpleCurrency:Get(id)<entry.price then code="insufficient_funds" end
-    if code then self:Send(player,"hope_shop_result",{success=false,code=code}); self.busy[id]=nil; return end
+    if code then
+        if code=="no_base" then self:MarkBaseForPlayer(player,hero) end
+        self:Send(player,"hope_shop_result",{success=false,code=code}); self.busy[id]=nil; return
+    end
     if not PurpleCurrency:Debit(id,entry.price) then self:Send(player,"hope_shop_result",{success=false,code="insufficient_funds"}); self.busy[id]=nil; return end
     local ok,fail
     local callOK
     callOK,ok,fail=pcall(function()
         if entry.delivery=="item" then return self:DeliverItem(hero,entry.item),"delivery_failed" end
+        if entryID=="generator_refill" then return self:ApplyService(entryID,nil,hero) end
         local ownBed=BedUtils:NearestLivingBed(hero:GetAbsOrigin(),FIND_UNITS_EVERYWHERE,hero:GetTeamNumber())
         if not ownBed then return false,"own_bed_destroyed" end
         return self:ApplyService(entryID,ownBed,hero)

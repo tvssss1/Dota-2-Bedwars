@@ -61,7 +61,9 @@ var IslandShop = {};
             if (enabled) {
                 var buy = $.CreatePanel("Button", row, "");
                 buy.AddClass("IslandBuy");
-                buy.enabled = nearby && balance >= Number(entry.price);
+                // Keep the button clickable so the authoritative server can
+                // explain every failed purchase instead of silently disabling it.
+                buy.enabled = true;
                 buy.SetPanelEvent("onmouseover", hoverSound);
                 (function (button, entryID) {
                     button.SetPanelEvent("onactivate", function () {
@@ -92,6 +94,13 @@ var IslandShop = {};
         var label = panel.FindChildTraverse("IslandResult");
         label.SetHasClass("Success", !!data.success);
         label.text = localize("#island_shop_result_" + (data.code || "delivery_failed"));
+        if (!data.success) {
+            GameEvents.SendEventClientSide("dota_hud_error_message", {
+                splitscreenplayer: 0,
+                reason: "",
+                message: label.text
+            });
+        }
         sound(data.success ? "ui_shop_buy" : "General.Cancel");
     }
 

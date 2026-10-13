@@ -6,6 +6,9 @@
     var isDuo = !!mapInfo && String(mapInfo.map_name || "").toLowerCase().indexOf("bw_duo") !== -1;
     var teams = isDuo ? [6, 7, 8] : [6, 7, 8, 9];
     var bedAliveByTeam = {};
+    var inspectedPlayerID = -1;
+    var inspectedInventorySignature = "";
+    var inspectedSlots = [0, 1, 2, 3, 4, 5, 6, 7, 8, 15, 16];
     var hiddenValvePanels = [
         "TopBarRadiantTeam",
         "TopBarDireTeam",
@@ -38,13 +41,96 @@
         return players;
     }
 
-    function focusPlayerHero(playerID) {
+    function inspectPlayerHero(playerID) {
         if (playerID === undefined || playerID === null || playerID < 0) return;
         var hero = Players.GetPlayerHeroEntityIndex(playerID);
         if (hero === -1) return;
-        GameUI.SelectUnit(hero, false);
-        GameUI.SetCameraTarget(hero);
-        $.Schedule(0.15, function () { GameUI.SetCameraTarget(-1); });
+        if (inspectedPlayerID === playerID) {
+            closeHeroInventory();
+            return;
+        }
+        inspectedPlayerID = playerID;
+        inspectedInventorySignature = "";
+        var inspector = context.FindChildTraverse("HeroInventoryInspect");
+        if (inspector) inspector.RemoveClass("Hidden");
+        renderHeroInventory(true);
+        Game.EmitSound("ui_generic_button_click");
+    }
+
+    function closeHeroInventory() {
+        inspectedPlayerID = -1;
+        inspectedInventorySignature = "";
+        var inspector = context.FindChildTraverse("HeroInventoryInspect");
+        if (inspector) inspector.AddClass("Hidden");
+    }
+
+    function renderHeroInventory(force) {
+        if (inspectedPlayerID < 0) return;
+        var hero = Players.GetPlayerHeroEntityIndex(inspectedPlayerID);
+        if (hero === -1 || !Entities.IsValidEntity(hero)) {
+            closeHeroInventory();
+            return;
+        }
+
+        var heroName = playerHeroName(inspectedPlayerID);
+        var portrait = context.FindChildTraverse("InspectHeroPortrait");
+        var title = context.FindChildTraverse("InspectHeroTitle");
+        if (portrait && portrait.heroname !== heroName) portrait.heroname = heroName;
+        if (title) {
+            var playerName = Players.GetPlayerName(inspectedPlayerID) || $.Localize("#scoreboard_inventory_title");
+            var localizedHero = heroName ? $.Localize("#" + heroName) : "";
+            title.text = localizedHero ? playerName + " — " + localizedHero : playerName;
+        }
+
+        var signature = [];
+        var inventory = [];
+        for (var i = 0; i < inspectedSlots.length; i++) {
+            var itemEntity = Entities.GetItemInSlot(hero, inspectedSlots[i]);
+            var itemName = itemEntity !== -1 && itemEntity !== undefined
+                ? Abilities.GetAbilityName(itemEntity) : "";
+            var charges = 0;
+            if (itemName && typeof Items !== "undefined" && Items.GetCurrentCharges) {
+                charges = Number(Items.GetCurrentCharges(itemEntity)) || 0;
+            }
+            inventory.push({ name: itemName, charges: charges });
+            signature.push(itemName + ":" + charges);
+        }
+        signature = signature.join("|");
+        if (!force && signature === inspectedInventorySignature) return;
+        inspectedInventorySignature = signature;
+
+        var grid = context.FindChildTraverse("InspectInventorySlots");
+        if (!grid) return;
+        grid.RemoveAndDeleteChildren();
+        for (var slotIndex = 0; slotIndex < inspectedSlots.length; slotIndex++) {
+            var slot = $.CreatePanel("Panel", grid, "InspectSlot" + inspectedSlots[slotIndex]);
+            slot.AddClass("InspectInventorySlot");
+            if (inspectedSlots[slotIndex] >= 15) slot.AddClass("SpecialSlot");
+            var item = inventory[slotIndex];
+            if (item.name) {
+                var icon = $.CreatePanel("DOTAItemImage", slot, "");
+                icon.AddClass("InspectInventoryIcon");
+                icon.itemname = item.name;
+                if (item.charges > 0) {
+                    var chargeLabel = $.CreatePanel("Label", slot, "");
+                    chargeLabel.AddClass("InspectInventoryCharges");
+                    chargeLabel.text = String(item.charges);
+                }
+                (function (panel, itemName) {
+                    panel.SetPanelEvent("onmouseover", function () {
+                        $.DispatchEvent("DOTAShowAbilityTooltip", panel, itemName);
+                    });
+                    panel.SetPanelEvent("onmouseout", function () {
+                        $.DispatchEvent("DOTAHideAbilityTooltip", panel);
+                    });
+                })(slot, item.name);
+            } else {
+                var empty = $.CreatePanel("Label", slot, "");
+                empty.AddClass("InspectInventoryEmpty");
+                empty.text = inspectedSlots[slotIndex] === 15 ? "TP" :
+                    (inspectedSlots[slotIndex] === 16 ? "N" : String(inspectedSlots[slotIndex] + 1));
+            }
+        }
     }
 
     var orangeCard = context.FindChildTraverse("Team9");
@@ -84,7 +170,8 @@
         var dead = false;
         var respawnText = "";
         frame.SetHasClass("EmptySlot", heroName.length === 0);
-        frame.SetPanelEvent("onactivate", function () { focusPlayerHero(hasPlayer ? playerID : -1); });
+        frame.SetHasClass("InventoryInspected", hasPlayer && inspectedPlayerID === playerID);
+        frame.SetPanelEvent("onactivate", function () { inspectPlayerHero(hasPlayer ? playerID : -1); });
 
         if (heroName.length > 0) {
             if (portrait.heroname !== heroName) portrait.heroname = heroName;
@@ -148,6 +235,7 @@
         if (!context || !context.IsValid()) return;
         hideDefaultTeamUI();
         teams.forEach(updateTeam);
+        renderHeroInventory(false);
         $.Schedule(0.25, updateLoop);
     }
 
@@ -160,5 +248,7 @@
         }
     });
     updateAllBeds();
+    var inspectClose = context.FindChildTraverse("InspectClose");
+    if (inspectClose) inspectClose.SetPanelEvent("onactivate", closeHeroInventory);
     updateLoop();
 })();

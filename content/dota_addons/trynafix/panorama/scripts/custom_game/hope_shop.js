@@ -2,7 +2,7 @@ var HopeShop = {};
 (function () {
     "use strict";
     var panel=$.GetContextPanel(), playerID=Game.GetLocalPlayerID(), modal, catalog, context, balance=0, focusCycle=0;
-    var order=["tower","recall","raid","repair","shield"];
+    var order=["tower","recall","raid","repair","shield","generator_refill"];
     function L(token){ return $.Localize(token,panel); }
     function sound(name){ Game.EmitSound(name); }
     function ensureVisibleHost(){
@@ -27,14 +27,22 @@ var HopeShop = {};
             var info=$.CreatePanel("Panel",row,""); info.AddClass("EntryInfo");
             var name=$.CreatePanel("Label",info,""); name.AddClass("EntryName"); name.text=L(e.name);
             var desc=$.CreatePanel("Label",info,""); desc.AddClass("EntryDesc"); desc.text=L(e.description);
-            var buy=$.CreatePanel("Button",row,""); buy.AddClass("BuyButton"); buy.enabled=!!(context&&context.can_checkout); buy.SetPanelEvent("onactivate",function(){ sound("ui_generic_button_click"); buy.enabled=false; GameEvents.SendCustomGameEventToServer("hope_shop_purchase",{entry_id:id}); });
+            var buy=$.CreatePanel("Button",row,""); buy.AddClass("BuyButton"); buy.enabled=true; buy.SetPanelEvent("onactivate",function(){ sound("ui_generic_button_click"); buy.enabled=false; GameEvents.SendCustomGameEventToServer("hope_shop_purchase",{entry_id:id}); });
             var price=$.CreatePanel("Label",buy,""); price.text=L("#hope_shop_buy")+" — "+e.price;
         });
     }
-    function applyContext(data){ context=data||{}; updateBalance(data); panel.FindChildTraverse("HopeContext").text=L(context.can_checkout?"#hope_shop_near_bed":"#hope_shop_no_bed"); build(); }
+    function applyContext(data){
+        context=data||{}; updateBalance(data);
+        var status=L(context.can_checkout?"#hope_shop_near_bed":"#hope_shop_no_bed");
+        if(context.generator_remaining!==undefined){
+            status+="  •  "+L("#hope_shop_generator_status")+" "+Number(context.generator_remaining)+"/"+Number(context.generator_capacity||6000);
+        }
+        panel.FindChildTraverse("HopeContext").text=status; build();
+    }
     function onResult(data){
         applyContext(data); var result=panel.FindChildTraverse("HopeResult");
         result.SetHasClass("Success",!!data.success); result.text=L("#hope_shop_result_"+(data.code||"delivery_failed"));
+        if(!data.success) GameEvents.SendEventClientSide("dota_hud_error_message",{splitscreenplayer:0,reason:"",message:result.text});
         sound(data.success?"ui_shop_buy":"General.Cancel");
     }
     function maintainModalFocus(cycle){

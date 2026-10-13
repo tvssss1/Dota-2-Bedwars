@@ -14,7 +14,12 @@ function modifier_bed_fountain_regen_aura:GetAuraSearchFlags() return DOTA_UNIT_
 function modifier_bed_fountain_regen_aura:GetModifierAura() return "modifier_bed_fountain_regen" end
 
 function modifier_bed_fountain_regen_aura:GetAuraEntityReject(target)
-    if not target or target:IsNull() or not target:IsRealHero() then return true end
+    if not target or target:IsNull() then return true end
+    local isRealHero = target.IsRealHero and target:IsRealHero()
+    local isClone = target.IsClone and target:IsClone()
+    local isIllusion = target.IsIllusion and target:IsIllusion()
+    local isTempestDouble = target.IsTempestDouble and target:IsTempestDouble()
+    if (not isRealHero and not isClone) or isIllusion or isTempestDouble then return true end
     -- Tools Mode opponents are disposable victory-test targets. Keeping them
     -- outside the 6%/second bed regeneration prevents a level-one attacker
     -- from seeing an apparently unkillable debug hero.

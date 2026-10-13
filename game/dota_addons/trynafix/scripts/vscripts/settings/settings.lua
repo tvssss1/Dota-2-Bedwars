@@ -161,7 +161,9 @@ function GameSetup:init()
 
     GameRules:SetStartingGold(600)
     GameRules:SetGoldTickTime(1.0)
-    GameRules:SetGoldPerTick(2)
+    -- PassiveIncomeService grants the tick explicitly for custom teams; leave
+    -- the native value at zero so supported teams cannot receive it twice.
+    GameRules:SetGoldPerTick(0)
     -- Native auto-launch recalculates its transition deadline when a player
     -- changes teams. The game uses one server-owned, immutable deadline below.
     GameRules:EnableCustomGameSetupAutoLaunch(false)
@@ -339,22 +341,22 @@ function GameSetup:PermanentBaseRegenThink()
         end
     end
 
-    for playerID = 0, DOTA_MAX_PLAYERS - 1 do
-        if PlayerResource:IsValidPlayerID(playerID) then
-            local hero = PlayerResource:GetSelectedHeroEntity(playerID)
-            if (not hero) or hero:IsNull() then
-                local player = PlayerResource:GetPlayer(playerID)
-                hero = player and player:GetAssignedHero() or nil
-            end
-
-            if hero and not hero:IsNull() then
+    -- HeroList includes independently controlled clones such as Meepo's,
+    -- whereas PlayerResource only returns the player's primary hero.
+    for _, hero in pairs(HeroList:GetAllHeroes()) do
+        if hero and not hero:IsNull() then
+            local isRealHero = hero.IsRealHero and hero:IsRealHero()
+            local isClone = hero.IsClone and hero:IsClone()
+            local isIllusion = hero.IsIllusion and hero:IsIllusion()
+            local isTempestDouble = hero.IsTempestDouble and hero:IsTempestDouble()
+            if (isRealHero or isClone) and not isIllusion and not isTempestDouble then
                 local team = hero:GetTeamNumber()
                 local isCustomTeam = ModeConfig.IsPlayableTeam(team)
 
                 -- Keep dead heroes permanently locked, but never put the
                 -- respawn-disabled engine state on a living hero: that state
                 -- also blocks inventory and pickup orders.
-                if self.respawnDisabledTeams[team] then
+                if self.respawnDisabledTeams[team] and not isClone then
                     if hero:IsAlive() then
                         self:MaintainLivingHeroAfterBedLoss(hero)
                     elseif not self:IsHeroReincarnating(hero) then
@@ -482,6 +484,18 @@ function GameSetup:PublishBedState(team, alive)
         team_id = team,
         bed_alive = aliveValue
     })
+end
+
+function GameSetup:NotifyBedUnderAttack(bed)
+    if not self:IsBed(bed) or not bed:IsAlive() then return end
+    local team = bed:GetTeamNumber()
+    local origin = bed:GetAbsOrigin()
+
+    -- Use Dota's stock local-team Ancient warning, exactly as identified in
+    -- the shipped announcer subtitle/sound assets. Keep the native hint marker
+    -- so the threatened bed is also visible on the minimap.
+    MinimapEvent(team, bed, origin.x, origin.y, DOTA_MINIMAP_EVENT_HINT_LOCATION, 3)
+    EmitAnnouncerSoundForTeam("announcer_announcer_anc_attack_yr", team)
 end
 
 function GameSetup:AnnounceBedDestroyed(team)
@@ -783,7 +797,12 @@ function GameSetup:OnEntityKilled(keys)
         -- Aegis deaths are reincarnations, not ordinary deaths. Do not drop
         -- currency, apply the permanent bed-loss lock, run elimination, or
         -- overwrite the engine's five-second reincarnation timer.
-        if self:IsHeroReincarnating(killed) then return end
+        if self:IsHeroReincarnating(killed) then
+            -- npc_spawned also fires for Aegis and ability reincarnations. Mark
+            -- this specific spawn so duo positioning does not move it home.
+            killed._trynafixReincarnationSpawn = true
+            return
+        end
 
         self:DropDeathCurrencies(killed)
 
@@ -1040,7 +1059,11 @@ function GameSetup:OnNPCSpawned(keys)
         if ModeConfig.IsPlayableTeam(team) then
             self.participatingTeams[team] = true
         end
-        self:PlaceDuoHeroAtBase(unit)
+        if unit._trynafixReincarnationSpawn then
+            unit._trynafixReincarnationSpawn = nil
+        else
+            self:PlaceDuoHeroAtBase(unit)
+        end
         local state = GameRules:State_Get()
         if state >= DOTA_GAMERULES_STATE_PRE_GAME and state < DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then
             if not unit:HasModifier("modifier_pregame_stun") then

@@ -47,6 +47,24 @@ function CustomCourierService:Init()
 
     ListenToGameEvent("entity_killed", function(event) self:OnEntityKilled(event) end, nil)
     ListenToGameEvent("npc_spawned", function(event) self:OnNPCSpawned(event) end, nil)
+
+    -- Couriers are a baseline utility in this mode, not an unlock. Retry until
+    -- each active player's selected hero exists, then the normal death handler
+    -- below keeps that same courier available for the rest of the match.
+    GameRules:GetGameModeEntity():SetContextThink("EnsureFreePlayerCouriers", function()
+        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_POST_GAME then return nil end
+        if GameRules:State_Get() >= DOTA_GAMERULES_STATE_PRE_GAME then
+            for playerID = 0, (DOTA_MAX_PLAYERS - 1) do
+                if validPlayerID(playerID) and not self:HasCourier(playerID) then
+                    local hero = self:GetOwnerHero(playerID)
+                    if validUnit(hero) and hero:IsRealHero() then
+                        self:PurchaseCourier(playerID, hero)
+                    end
+                end
+            end
+        end
+        return 1.0
+    end, 0)
 end
 
 function CustomCourierService:GetOwnerHero(playerID)

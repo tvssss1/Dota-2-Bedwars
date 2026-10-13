@@ -8,7 +8,7 @@ IslandShop.CATALOG = {
     { slot=2, id="harvest_tonic", name="#island_shop_tonic_name", description="#island_shop_tonic_desc", icon="file://{images}/items/harvest_tonic.png", price=8, enabled=true, item="item_harvest_tonic" },
     { slot=3, id="skyhook_spool", name="#island_shop_skyhook_name", description="#island_shop_skyhook_desc", icon="file://{images}/items/skyhook_spool.png", price=5, enabled=true, item="item_skyhook_spool" },
     { slot=4, id="gravity_marble", name="#island_shop_gravity_name", description="#island_shop_gravity_desc", icon="file://{images}/items/gravity_marble.png", price=6, enabled=true, item="item_gravity_marble" },
-    { slot=5, id="custom_courier", name="#island_shop_courier_name", description="#island_shop_courier_desc", icon="item_courier", price=7, enabled=true, kind="courier" },
+    { slot=5, id="custom_courier", name="#island_shop_courier_name", description="#island_shop_courier_desc", icon="item_courier", price=0, enabled=true, kind="courier" },
     { slot=6, id="overdrive_grenade", name="#island_shop_overdrive_name", description="#island_shop_overdrive_desc", icon="file://{images}/items/overdrive_grenade.png", price=5, enabled=true, item="item_overdrive_grenade", max_charges=6 },
     { slot=7, id="future_07", enabled=false },
     { slot=8, id="future_08", enabled=false },
@@ -46,19 +46,34 @@ local function playerFromEvent(source, data)
     return nil, -1
 end
 
-function IslandShop:IsNearShopkeeper(hero)
-    if not hero or hero:IsNull() or not hero:IsAlive() then return false end
+function IslandShop:GetNearestShopkeeper(hero)
+    if not hero or hero:IsNull() or not hero:IsAlive() then return nil, nil end
     -- Entity iteration reliably includes invulnerable shopkeepers on every
     -- custom team; FindUnitsInRadius can omit them depending on target flags.
+    local nearest, nearestDistance = nil, math.huge
     local units = Entities:FindAllByClassname("npc_dota_creature") or {}
     for _, unit in pairs(units) do
         if unit and not unit:IsNull() and unit:IsAlive()
-            and unit:GetUnitName() == "shop_keeper_custom_first"
-            and (unit:GetAbsOrigin() - hero:GetAbsOrigin()):Length2D() <= self.RADIUS then
-            return true
+            and unit:GetUnitName() == "shop_keeper_custom_first" then
+            local distance = (unit:GetAbsOrigin() - hero:GetAbsOrigin()):Length2D()
+            if distance < nearestDistance then
+                nearest, nearestDistance = unit, distance
+            end
         end
     end
-    return false
+    return nearest, nearestDistance
+end
+
+function IslandShop:IsNearShopkeeper(hero)
+    local shopkeeper, distance = self:GetNearestShopkeeper(hero)
+    return shopkeeper ~= nil and distance <= self.RADIUS
+end
+
+function IslandShop:MarkNearestShopkeeper(hero)
+    local shopkeeper = self:GetNearestShopkeeper(hero)
+    if not shopkeeper then return end
+    local position = shopkeeper:GetAbsOrigin()
+    MinimapEvent(hero:GetTeamNumber(), shopkeeper, position.x, position.y, DOTA_MINIMAP_EVENT_HINT_LOCATION, 3)
 end
 
 function IslandShop:GetContext(id)
@@ -137,9 +152,9 @@ function IslandShop:Purchase(source, data)
     elseif not self:IsNearShopkeeper(hero) then code = "not_nearby"
     elseif entry.item == "item_skyhook_spool" and self:HasItem(hero, entry.item) then code = "already_owned"
     elseif entry.max_charges and self:GetHeldItemCharges(hero, entry.item) >= entry.max_charges then code = "max_charges"
-    elseif entry.kind == "courier" and CustomCourierService:HasCourier(id) then code = "courier_owned"
     elseif PumpkinCurrency:Get(id) < entry.price then code = "insufficient_funds" end
     if code then
+        if code == "not_nearby" then self:MarkNearestShopkeeper(hero) end
         self:Send(player, "island_shop_result", { success=false, code=code })
         self.busy[id] = nil
         return
@@ -151,6 +166,7 @@ function IslandShop:Purchase(source, data)
     end
     local called, ok, failureCode = pcall(function()
         if entry.kind == "courier" then
+            if CustomCourierService:HasCourier(id) then return true end
             return CustomCourierService:PurchaseCourier(id, hero)
         end
         if entry.max_charges then

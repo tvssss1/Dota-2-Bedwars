@@ -104,8 +104,11 @@
                 count
             );
         }
-        var ultimate = String(data.kind || "") === "ultimate";
-        offerTitle.text = localize(ultimate ? "#ability_draft_ultimate_title" : "#ability_draft_basic_title");
+        var kind = String(data.kind || "");
+        var ultimate = kind === "ultimate";
+        offerTitle.text = localize(kind === "native_basic"
+            ? "#ability_draft_native_title"
+            : (ultimate ? "#ability_draft_ultimate_title" : "#ability_draft_basic_title"));
         offer.SetHasClass("Ultimate", ultimate);
         offer.RemoveClass("Choosing");
         offer.AddClass("Visible");

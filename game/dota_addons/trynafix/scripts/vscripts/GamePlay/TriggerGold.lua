@@ -1,3 +1,17 @@
+local BaseGoldGenerator = require("services/base_gold_generator")
+
+local function notifyGeneratorEmpty(hero)
+    if hero._baseGeneratorEmptyNotified then return end
+    hero._baseGeneratorEmptyNotified = true
+    local player = PlayerResource:GetPlayer(hero:GetPlayerOwnerID())
+    if player then
+        CustomGameEventManager:Send_ServerToPlayer(player, "ShowError", {
+            message = "#base_generator_empty"
+        })
+        EmitSoundOnClient("General.Cancel", player)
+    end
+end
+
 function StartGoldTick(event)
     local activator = event.activator
     if not activator or activator:IsNull() or not activator:IsRealHero() then return end
@@ -21,7 +35,18 @@ function StartGoldTick(event)
             return nil
         end
 
-        local gold = RandomInt(10, 24)
+        local gameState = GameRules:State_Get()
+        if gameState >= DOTA_GAMERULES_STATE_POST_GAME then return nil end
+        if gameState ~= DOTA_GAMERULES_STATE_GAME_IN_PROGRESS then return 0.25 end
+
+        local gold, remaining = BaseGoldGenerator:Take(activator:GetTeamNumber(), RandomInt(10, 24))
+        if gold <= 0 then
+            notifyGeneratorEmpty(activator)
+            -- Keep checking while the hero remains on the generator. A refill
+            -- purchased by their teammate should resume payouts immediately.
+            return 1.0
+        end
+        activator._baseGeneratorEmptyNotified = false
         local xp = RandomInt(15, 35)
 
         PlayerResource:ModifyGold( activator:GetPlayerOwnerID(), gold, true, DOTA_ModifyGold_Unspecified )
@@ -39,6 +64,7 @@ function StartGoldTick(event)
         local player = PlayerResource:GetPlayer(activator:GetPlayerOwnerID())
         if player then
             EmitSoundOnClient("General.Coins", player)
+            if remaining <= 0 then notifyGeneratorEmpty(activator) end
         end
         return 1.0
     end)

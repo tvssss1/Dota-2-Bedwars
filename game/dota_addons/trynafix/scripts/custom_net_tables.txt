@@ -13,6 +13,7 @@
         "team_selection",
         "random_draft",
         "strategy_shop",
-        "ability_draft"
+        "ability_draft",
+        "base_gold_generator"
     ]
 }
